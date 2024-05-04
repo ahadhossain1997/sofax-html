@@ -90,7 +90,7 @@
       pauseOnHover: false,
       cssEase: 'linear',
       responsive: [{
-        breakpoint: 991,
+        breakpoint: 1199,
         settings: {
           slidesToShow: 3
         }
@@ -144,7 +144,7 @@
       }]
     });
     $('.sofax-slider-logo-wrap').slick({
-      slidesToShow: 5,
+      slidesToShow: 6,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 0,
@@ -154,6 +154,40 @@
       cssEase: 'linear',
       responsive: [{
         breakpoint: 1399,
+        settings: {
+          slidesToShow: 5
+        }
+      }, {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3
+        }
+      }, {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+
+    // sofax integration images slider 
+
+    $('.sofax-integration-slider-icon-data').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 5000,
+      arrows: false,
+      pauseOnHover: false,
+      cssEase: 'linear',
+      responsive: [{
+        breakpoint: 1399,
+        settings: {
+          slidesToShow: 5
+        }
+      }, {
+        breakpoint: 1199,
         settings: {
           slidesToShow: 4
         }
@@ -169,7 +203,38 @@
         }
       }]
     });
-
+    $('.sofax-integration-slider-icon-data-wrap').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 5000,
+      arrows: false,
+      pauseOnHover: false,
+      cssEase: 'linear',
+      rtl: true,
+      responsive: [{
+        breakpoint: 1399,
+        settings: {
+          slidesToShow: 5
+        }
+      }, {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3
+        }
+      }, {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
     // testimonial 2column slider active
 
     $('.sofax-testimonial-2column-slider').slick({
@@ -180,6 +245,7 @@
       prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
       nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
     });
+
     // button animation
 
     var buttons = document.querySelectorAll(".sofax-default-btn");
@@ -200,6 +266,13 @@
     sofax MAGNIFIC POPUP JS INIT
     ------------------------------------------------------------*/
     var popup_youtube = $('.video-init');
+    if (popup_youtube.is_exist()) {
+      popup_youtube.magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade'
+      });
+    }
+    var popup_youtube = $('.play-video');
     if (popup_youtube.is_exist()) {
       popup_youtube.magnificPopup({
         type: 'iframe',

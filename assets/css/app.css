@@ -22,9 +22,11 @@
 --light-bg: #F9F9FA;
 --dark-bg: #0E0E0E;
 --white-bg: #fff;
+--white-color: #fff;
 --light-color: #EAEDF0;
---border2-color: #DBDBDB;
+--light-color2: #DBDBDB;
 --green-bg: #0C9347;
+--grey-color: #747474;
 }
 
 /*1.0 base css*/
@@ -338,7 +340,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 74px;
+  font-size: 75px;
   line-height: 1.07em; /* 116.667% */
   letter-spacing: -2px;
 }
@@ -366,7 +368,7 @@ h2,
 
 h3,
 .h3 {
-  font-size: 30px;
+  font-size: 35px;
   line-height: 1.4em;
 }
 @media (max-width: 767px) {
@@ -1807,12 +1809,52 @@ blockquote {
   background-color: var(--light-bg) !important;
 }
 
-.heading-bg {
-  background-color: var(--heading-color) !important;
-}
-
 .z-index {
   z-index: 0;
+}
+
+.mr-90 {
+  margin-right: 70px;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.08);
+}
+
+.ml-60 {
+  margin-left: 60px;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.08);
+}
+
+.ml-70 {
+  margin-left: 70px;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+@media (max-width: 991px) {
+  .mb-40 {
+    margin-bottom: 30px !important;
+  }
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.accent-bg {
+  background-color: var(--accent-color);
+}
+
+.light-color h2 {
+  color: var(--white-bg);
+}
+.light-color h4 {
+  color: var(--white-bg);
+}
+.light-color h5 {
+  color: var(--white-bg);
+}
+.light-color p {
+  color: var(--white-bg);
 }
 
 /*1.1 layout css*/
@@ -1848,7 +1890,17 @@ header.sofax-header-section.sticky-menu {
   margin-bottom: 20px;
 }
 .sofax-footer-wrap p {
-  margin-bottom: 45px;
+  margin-bottom: 24px;
+  font-size: 20px !important;
+}
+.sofax-footer-wrap.light-color {
+  color: var(--white-color);
+}
+@media (max-width: 1199px) {
+  .sofax-footer-wrap.ml-60 {
+    margin-left: 0;
+    max-width: 600px;
+  }
 }
 
 .sofax-footer-menu h5 {
@@ -1865,6 +1917,15 @@ header.sofax-header-section.sticky-menu {
     margin-top: 40px;
   }
 }
+.sofax-footer-menu.light-color h5 {
+  color: var(--white-color);
+}
+.sofax-footer-menu.light-color ul li a {
+  color: var(--white-color);
+}
+.sofax-footer-menu.ml-61 {
+  margin-left: 60px;
+}
 
 .sofax-footer-active {
   margin-left: 60px;
@@ -1879,33 +1940,60 @@ a.social-icon img {
   margin-bottom: 15px;
 }
 
-.sofax-social-icon ul li {
-  display: inline-block;
-}
-.sofax-social-icon ul li a {
-  padding: 15px;
-  border-radius: 50px;
-  border: 1px solid var(--light-bg);
-  background-color: var(--light-bg);
-  width: 45px;
-  height: 45px;
-  display: flex;
-  margin-right: 24px;
-  align-items: center;
-  transition: 0.3s;
-}
-.sofax-social-icon ul li a:hover {
-  background-color: var(--accent-color);
-}
-
-.sofax-footer-bottom-text {
+.sofax-footer-bottom {
   display: block;
-  text-align: center;
   padding: 30px 0;
   border-top: 1px solid var(--light-color);
 }
-.sofax-footer-bottom-text p {
+.sofax-footer-bottom.center {
+  text-align: center;
+}
+.sofax-footer-bottom p {
   margin: 0;
+}
+.sofax-footer-bottom.dark-bottom {
+  border-top: 1px solid var(--body-color);
+}
+.sofax-footer-bottom.dark-bottom p {
+  color: var(--white-color);
+}
+
+@media (max-width: 991px) {
+  .sofax-footer {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-footer {
+    margin-left: 0;
+  }
+}
+
+.sofax-footer3-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  border-top: 1px solid var(--light-color);
+}
+@media (max-width: 767px) {
+  .sofax-footer3-wrap {
+    display: block;
+    text-align: center;
+  }
+}
+.sofax-footer3-text {
+  align-items: center;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .sofax-footer3-text {
+    display: block;
+    margin: 15px 0 0 30px;
+  }
+}
+.sofax-footer3 p {
+  line-height: 28px;
+  color: var(--grey-color);
 }
 
 /*1.2 components css*/
@@ -1938,9 +2026,13 @@ a.social-icon img {
   padding: 13px 36px;
 }
 .sofax-default-btn.outline-btn {
-  padding: 17px;
+  padding: 17px 40px;
   background-color: transparent;
   border: 1px solid var(--heading-color);
+}
+.sofax-default-btn.dark-btn {
+  color: var(--white-color) !important;
+  background-color: var(--dark-bg);
 }
 .sofax-default-btn.disabled, .sofax-default-btn:disabled {
   opacity: 1;
@@ -1956,6 +2048,20 @@ a.social-icon img {
 }
 .sofax-default-btn:focus {
   box-shadow: none;
+}
+.sofax-default-btn.pricing-btn-v4:hover {
+  color: var(--heading-color) !important;
+  background-color: var(--accent-color);
+}
+.sofax-default-btn.pricing-btnv4:hover {
+  color: var(--white-color) !important;
+  background-color: var(--heading-color);
+}
+.sofax-default-btn.blog-btn {
+  background-color: var(--light-color);
+  color: var(--body-color) !important;
+  font-weight: 400 !important;
+  padding: 7px 18px;
 }
 
 .sofax-default-btn span {
@@ -1991,6 +2097,37 @@ a.sofax-icon-btn img {
   margin-left: 10px;
 }
 
+.sofax-service-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sofax-blog-icon-btn {
+  font-size: 18px !important;
+  line-height: 24px !important;
+  font-weight: 700 !important;
+  color: var(--dark-bg) !important;
+}
+
+.sofax-hero-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.sofax-hero5-btn {
+  justify-content: start !important;
+}
+@media (max-width: 767px) {
+  .sofax-hero5-btn {
+    justify-content: center !important;
+  }
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
@@ -2004,14 +2141,17 @@ input, textarea {
   width: 100%;
   height: 60px;
   font-weight: 700;
-  color: #3C3C3C;
   font-size: 16px;
   border-radius: 50px;
-  background-color: transparent;
   padding: 15px 24px !important;
   border: none !important;
   transition: all 0.4s;
-  border: 1px solid #747474 !important;
+  border: 1px solid #747474;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--accent-color) !important;
 }
 
 textarea {
@@ -2066,6 +2206,9 @@ textarea::placeholder { /* Most modern browsers support this now. */
   margin: 0 auto;
   position: relative;
 }
+.sofax-subscription-field input {
+  border: 1px solid var(--grey-color) !important;
+}
 
 button#sofax-subscription-btn {
   position: absolute;
@@ -2089,6 +2232,92 @@ button#sofax-subscription-btn {
   }
 }
 
+.sofax-subscription-field2 input {
+  margin: 0;
+  height: 50px;
+  width: 100%;
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: var(--body-color) !important;
+  padding: 15px 28px !important;
+  transition: all 0.4s;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--body-color) !important;
+}
+.sofax-subscription-field2 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--white-color);
+}
+.sofax-subscription-field2 input::-moz-placeholder { /* Firefox 19+ */
+  color: var(--white-color);
+}
+.sofax-subscription-field2 input:-ms-input-placeholder { /* IE 10+ */
+  color: var(--white-color);
+}
+.sofax-subscription-field2 input:-moz-placeholder { /* Firefox 18- */
+  color: var(--white-color);
+}
+.sofax-subscription-field2 input .sofax-footer-btn {
+  position: relative;
+}
+
+.sofax-subcribe-btn2 {
+  font-weight: 700;
+  background-color: var(--accent-color);
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 8px;
+  position: static;
+  width: 100%;
+  margin-top: 12px;
+  height: 50px;
+}
+
+.form-content-box {
+  background: var(--white-color);
+  padding: 30px;
+  border-radius: 10px;
+}
+@media (max-width: 991px) {
+  .form-content-box {
+    margin-top: 50px;
+  }
+}
+.form-content-box h3 {
+  margin-bottom: 30px;
+}
+.form-content-box input {
+  width: 100%;
+  border-radius: 50px;
+  padding: 18px 24px;
+  height: 60px;
+  border: 1px solid var(--light-color2) !important;
+  outline: none;
+}
+.form-content-box input.button-text {
+  height: 150px;
+  border-radius: 10px !important;
+  padding: 15px 0px 105px 20px !important;
+  margin-bottom: 24px;
+}
+.form-content-box .form-field-item {
+  margin-bottom: 24px;
+}
+.form-content-box ul.nav {
+  background: var(--accent-color);
+  border-radius: 50px;
+  height: 60px;
+}
+.form-content-box ul.nav li a {
+  color: var(--dark-bg) !important;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18px 42px;
+}
+
+/* end form section v4 */
 .sofax-breadcrumb {
   text-align: center;
   padding: 195px 0 130px;
@@ -2225,6 +2454,9 @@ h1.post__title {
     padding-top: 120px;
   }
 }
+.sofax-hero-content span {
+  margin-right: 12%;
+}
 .sofax-hero-content.center {
   text-align: center;
   max-width: 1074px;
@@ -2235,6 +2467,17 @@ h1.post__title {
   .sofax-hero-content.center {
     max-width: 700px;
   }
+}
+.sofax-hero-content.center.max-width-medium {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sofax-hero-content.center-center {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 .sofax-hero-content p {
   font-size: 20px;
@@ -2276,6 +2519,10 @@ h1.post__title {
   }
 }
 
+.hero-section4 {
+  position: relative;
+}
+
 .sofax-section-padding2 {
   width: 100%;
 }
@@ -2287,12 +2534,44 @@ h1.post__title {
   gap: 30px;
   text-align: center;
 }
-
 .sofax-counter-data h2 {
   color: var(--white-bg);
 }
 .sofax-counter-data p {
   color: var(--white-bg);
+}
+
+.sofax-counter-wrap-v5 {
+  display: flex;
+  gap: 38px;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .sofax-counter-wrap-v5 {
+    display: block;
+  }
+}
+.sofax-counter-wrap-v5 h2 {
+  margin-bottom: 5px !important;
+}
+@media (max-width: 991px) {
+  .sofax-counter-data-v5 h2 {
+    font-size: 60px !important;
+    line-height: 65px;
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-counter-data-v5 h2 {
+    margin: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-counter-data-v5 {
+    margin-bottom: 20px;
+    font-size: 45px !important;
+    line-height: 50px;
+  }
 }
 
 .sofax-iconbox-wrap {
@@ -2332,21 +2611,92 @@ h1.post__title {
   font-size: 20px;
 }
 
+.accordion-item.faq-content-item {
+  border: 1px solid var(--light-color2);
+}
+
+.sofax-faq-content-wrap {
+  display: flex;
+  gap: 24px;
+}
+@media (max-width: 991px) {
+  .sofax-faq-content-wrap {
+    display: block;
+  }
+}
+
+.sofax-faq-column {
+  flex: 0 0 50%;
+}
+
+.faq-text {
+  padding-bottom: 20px;
+}
+
+.sofax-hero-video {
+  color: var(--white-bg);
+  background-color: #0E0E0E;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18px 30px;
+  border-radius: 50px;
+  display: inline-block;
+}
+.sofax-hero-video:hover {
+  color: var(--white-bg);
+}
+.sofax-hero-video img {
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+a.sofax-video-popup.video-init {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sofax-hero-video-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a.sofax-hero5-video.play-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+a.sofax-hero5-video.play-video img {
+  box-shadow: none !important;
+}
+@media (max-width: 1199px) {
+  a.sofax-hero5-video.play-video img {
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  a.sofax-hero5-video.play-video img {
+    width: 50%;
+  }
+}
+
 .sofax-testimonial-rating ul li {
   display: inline-block;
 }
 
 .sofax-testimonial-content {
-  border: 1px solid var(--border2-color);
+  border: 1px solid var(--light-color2);
   padding: 35px;
   border-radius: 10px;
 }
-
 .sofax-testimonial-data p {
   margin-bottom: 20px;
   font-size: 20px;
 }
-
 .sofax-testimonial-author {
   display: flex;
   gap: 10px;
@@ -2373,6 +2723,11 @@ h1.post__title {
 
 .sofax-testimonial-rating {
   margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .sofax-testimonial-rating {
+    margin-bottom: 20px;
+  }
 }
 .sofax-testimonial-rating ul li {
   display: inline-block;
@@ -2410,7 +2765,7 @@ h1.post__title {
 
 .sofax-testimonial-2column-slider .sofax-t-next,
 .sofax-testimonial-2column-slider .sofax-t-prev {
-  left: 70%;
+  left: 76%;
   width: 50px;
   height: 50px;
   bottom: 25px;
@@ -2425,10 +2780,45 @@ h1.post__title {
   border: none;
   background-color: var(--light-color);
 }
+@media (max-width: 1399px) {
+  .sofax-testimonial-2column-slider .sofax-t-next,
+  .sofax-testimonial-2column-slider .sofax-t-prev {
+    left: 75%;
+    bottom: 15px;
+  }
+}
+@media (max-width: 1199px) {
+  .sofax-testimonial-2column-slider .sofax-t-next,
+  .sofax-testimonial-2column-slider .sofax-t-prev {
+    left: 72%;
+    bottom: 13px;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-testimonial-2column-slider .sofax-t-next,
+  .sofax-testimonial-2column-slider .sofax-t-prev {
+    left: 68%;
+    bottom: 5px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-testimonial-2column-slider .sofax-t-next,
+  .sofax-testimonial-2column-slider .sofax-t-prev {
+    left: 62%;
+    bottom: 5px;
+  }
+}
+@media (max-width: 425px) {
+  .sofax-testimonial-2column-slider .sofax-t-next,
+  .sofax-testimonial-2column-slider .sofax-t-prev {
+    left: 56%;
+    bottom: 5px;
+  }
+}
 
 .sofax-testimonial-2column-slider .sofax-t-prev {
   left: auto;
-  right: 21%;
+  right: 15%;
   background-image: url(../images/v2/rightarrow.svg);
   background-color: var(--light-color);
 }
@@ -2437,9 +2827,65 @@ h1.post__title {
   font-size: 35px;
   line-height: 45px;
 }
+@media (max-width: 1199px) {
+  .sofax-testimonial-slider-content p {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-testimonial-slider-content p {
+    font-size: 25px;
+    line-height: 32px;
+  }
+}
 
 .testimonial-author p {
   font-size: 18px;
+}
+
+.sofax-testimonial-content-wrap {
+  padding: 30px;
+  border: 1px solid var(--light-color);
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.sofax-testimonial-btn {
+  text-align: center;
+  margin-top: 80px;
+}
+@media (max-width: 991px) {
+  .sofax-testimonial-btn {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-testimonial-btn {
+    margin-top: 40px;
+  }
+}
+
+.testimonial-content-v4 p {
+  font-size: 33px !important;
+  line-height: 45px;
+  letter-spacing: -0.5px;
+  color: var(--dark-bg) !important;
+}
+@media (max-width: 991px) {
+  .testimonial-content-v4 p {
+    font-size: 30px !important;
+    line-height: 35px;
+  }
+}
+
+.sofax-testimonial-author-data-v4 h4 {
+  margin-bottom: 8px;
+}
+@media (max-width: 991px) {
+  .sofax-testimonial-author-data-v4 {
+    text-align: center;
+  }
 }
 
 .sofax-cta-btn {
@@ -2475,6 +2921,33 @@ h1.post__title {
   }
 }
 
+.sofax-social-icon ul li {
+  display: inline-block;
+}
+.sofax-social-icon ul li a {
+  padding: 15px;
+  border-radius: 50px;
+  border: 1px solid var(--light-bg);
+  background-color: var(--light-bg);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  margin-right: 15px;
+  align-items: center;
+  transition: all 0.4s;
+}
+.sofax-social-icon ul li a:hover {
+  background-color: var(--accent-color);
+}
+.sofax-social-icon.dark-social ul li a {
+  background-color: var(--body-color);
+  border: 1px solid var(--body-color);
+}
+.sofax-social-icon.dark-social ul li a:hover {
+  color: var(--heading-color);
+  background-color: var(--accent-color);
+}
+
 .sofax-slider-section {
   padding: 100px 0;
 }
@@ -2508,7 +2981,6 @@ h1.post__title {
   color: #0E0E0E;
   margin-bottom: 15px;
 }
-
 .pricing-text ul li img {
   position: absolute;
   left: 0;
@@ -2523,6 +2995,31 @@ h1.post__title {
   gap: 20px;
   max-width: 600px;
   margin-bottom: 24px;
+}
+
+.sofax-list-icon-wrap {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .sofax-list-icon-wrap {
+    display: block;
+  }
+}
+.sofax-list-icon-icon ul li {
+  position: relative;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: #0E0E0E;
+  padding-left: 30px;
+  margin-bottom: 24px;
+}
+.sofax-list-icon-icon ul li img {
+  position: absolute;
+  left: 0;
+  top: 5px;
 }
 
 /* end  sofax pricing section */
@@ -2579,11 +3076,26 @@ h1.post__title {
   left: 0;
   top: 5px;
 }
+.sofax-pricing-bodyv4 {
+  margin-bottom: 0 !important;
+}
 
 .sofax-content-shape {
   position: absolute;
-  top: -15%;
-  right: -16%;
+  top: -16%;
+  right: -19%;
+}
+@media (max-width: 1399px) {
+  .sofax-content-shape {
+    top: -20%;
+    right: -23%;
+  }
+}
+@media (max-width: 1199px) {
+  .sofax-content-shape {
+    top: -23%;
+    right: -27%;
+  }
 }
 @media (max-width: 991px) {
   .sofax-content-shape {
@@ -2657,6 +3169,301 @@ h1.post__title {
 
 @media (max-width: 991px) {
   .hero2-shape {
+    display: none;
+  }
+}
+
+.sofax-cta-shape2 {
+  position: relative;
+}
+
+.sofax-cta-shape-v2 {
+  position: absolute;
+  bottom: -20px;
+  left: 28%;
+}
+@media (max-width: 1199px) {
+  .sofax-cta-shape-v2 {
+    left: 38%;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-cta-shape-v2 {
+    left: 67%;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-cta-shape-v2 img {
+    width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-cta-shape-v2 img {
+    display: none;
+  }
+}
+
+.sofax-hero-shape-v2 {
+  position: absolute;
+  top: -30px;
+  right: 10px;
+}
+@media (max-width: 1399px) {
+  .sofax-hero-shape-v2 {
+    top: -38px;
+    right: 8px;
+  }
+}
+@media (max-width: 1199px) {
+  .sofax-hero-shape-v2 {
+    top: -40px;
+    right: 0px;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-hero-shape-v2 {
+    display: none;
+  }
+}
+
+.sofax-shape-v2 {
+  position: absolute;
+  top: -30px;
+  left: 18px;
+}
+@media (max-width: 1399px) {
+  .sofax-shape-v2 {
+    top: -35px;
+    left: 12px;
+  }
+}
+@media (max-width: 1199px) {
+  .sofax-shape-v2 {
+    top: -42px;
+    left: 5px;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-shape-v2 {
+    display: none;
+  }
+}
+
+.hero3-shape {
+  position: absolute;
+  bottom: -20px;
+  right: 16%;
+}
+@media (max-width: 1399px) {
+  .hero3-shape {
+    bottom: -20px;
+    right: 12%;
+  }
+}
+@media (max-width: 1199px) {
+  .hero3-shape {
+    bottom: -20px;
+    right: 5%;
+  }
+}
+@media (max-width: 991px) {
+  .hero3-shape {
+    display: none;
+  }
+}
+
+.hero4-shape1 {
+  position: absolute;
+  top: -60%;
+  left: 16%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape1 {
+    left: 12%;
+  }
+}
+@media (max-width: 1199px) {
+  .hero4-shape1 {
+    left: 3%;
+  }
+}
+@media (max-width: 991px) {
+  .hero4-shape1 {
+    display: none;
+  }
+}
+
+.hero4-shape2 {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape2 {
+    display: none;
+  }
+}
+
+.hero4-shape3 {
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape3 {
+    display: none;
+  }
+}
+
+.hero4-shape4 {
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape4 {
+    display: none;
+  }
+}
+
+.hero4-shape5 {
+  position: absolute;
+  bottom: -1%;
+  right: 18%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape5 {
+    display: none;
+  }
+}
+
+.hero4-shape6 {
+  position: absolute;
+  bottom: 18%;
+  right: 11%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape6 {
+    display: none;
+  }
+}
+
+.hero4-shape7 {
+  position: absolute;
+  top: 44%;
+  right: 4%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape7 {
+    display: none;
+  }
+}
+
+.hero4-shape8 {
+  position: absolute;
+  top: 25%;
+  right: 12%;
+}
+@media (max-width: 1399px) {
+  .hero4-shape8 {
+    display: none;
+  }
+}
+
+.sofax-content-shape1 {
+  position: absolute;
+  top: 5%;
+  left: 0;
+}
+@media (max-width: 1399px) {
+  .sofax-content-shape1 {
+    display: none;
+  }
+}
+
+.sofax-content-shape2 {
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+@media (max-width: 1399px) {
+  .sofax-content-shape2 {
+    display: none;
+  }
+}
+
+.sofax-pricing-shapev4 {
+  position: absolute;
+  top: 14%;
+  left: 15%;
+}
+@media (max-width: 1399px) {
+  .sofax-pricing-shapev4 {
+    top: 14%;
+    left: 7%;
+  }
+}
+@media (max-width: 1399px) {
+  .sofax-pricing-shapev4 {
+    top: 9%;
+    left: 8%;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-pricing-shapev4 {
+    display: none;
+  }
+}
+
+.sofax-testimonial-shapev4 {
+  position: absolute;
+  top: 0;
+  right: -25%;
+}
+@media (max-width: 1199px) {
+  .sofax-testimonial-shapev4 {
+    display: none;
+  }
+}
+
+.sofax-blog-shapev4 {
+  position: absolute;
+  top: 11%;
+  left: 8%;
+}
+@media (max-width: 1399px) {
+  .sofax-blog-shapev4 {
+    top: 15%;
+    left: 0;
+  }
+  .sofax-blog-shapev4 img {
+    width: 80%;
+  }
+}
+@media (max-width: 1199px) {
+  .sofax-blog-shapev4 {
+    display: none;
+  }
+}
+
+.sofax-hero5-shape1 {
+  position: absolute;
+  top: 26%;
+  right: 17%;
+}
+@media (max-width: 1399px) {
+  .sofax-hero5-shape1 {
+    display: none;
+  }
+}
+
+.sofax-about-shapev5 {
+  position: absolute;
+  top: 7%;
+  left: 5%;
+}
+@media (max-width: 1399px) {
+  .sofax-about-shapev5 {
     display: none;
   }
 }
@@ -2897,6 +3704,9 @@ a.sofax-connect-login img {
     padding-top: 60px;
     text-align: center;
   }
+  .sofax-hero-thumb img {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .sofax-hero-thumb {
@@ -2910,7 +3720,28 @@ a.sofax-connect-login img {
 @media (max-width: 991px) {
   .sofax-content-img {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+  }
+  .sofax-content-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .mr-90 {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .ml-60 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .ml-70 {
+    margin-left: 0;
   }
 }
 
@@ -2918,10 +3749,8 @@ a.sofax-connect-login img {
   text-align: center;
   margin-top: 30px;
 }
-
-.features-v2 {
-  background-color: var(--accent-color);
-  padding: 30px 30px 0 30px;
+.sofax-features-thumb img {
+  width: 100%;
 }
 
 @media (max-width: 991px) {
@@ -2929,6 +3758,72 @@ a.sofax-connect-login img {
     text-align: center;
     margin-bottom: 30px;
   }
+  .about-thumb img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .testimonial-thumb {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .testimonial-thumb img {
+    width: 100%;
+  }
+}
+
+.sofax-hero-thumb2 {
+  position: relative;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .sofax-hero-thumb2 {
+    margin-top: 40px;
+  }
+  .sofax-hero-thumb2 img {
+    width: 100%;
+  }
+}
+
+.sofax-cta-thumb {
+  position: relative;
+  margin-right: 70px;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .sofax-cta-thumb {
+    margin-right: 0;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-cta-thumb img {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .sofax-content-thumb {
+    margin-bottom: 40px;
+  }
+  .sofax-content-thumb img {
+    width: 100%;
+  }
+}
+
+.hero5-thumb {
+  position: relative;
+  padding: 0 50px;
+}
+.hero5-thumb img {
+  box-shadow: 8px 8px 0px 0px #0E0E0E;
+  border-radius: 10px;
+}
+
+.about-thumbv5 img {
+  box-shadow: 8px 8px 0 0 #0e0e0e;
+  border-radius: 10px;
 }
 
 .accordion-item {
@@ -2942,10 +3837,6 @@ a.sofax-connect-login img {
 }
 .accordion-item h4 {
   margin: 0;
-}
-
-.sofax-default-content.content-2 {
-  margin-bottom: 50px;
 }
 
 .accordion-button:not(.collapsed) {
@@ -2966,12 +3857,28 @@ button.accordion-button {
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 24px;
+  transition: all 0.4s;
 }
 .sofax-features-icon {
   margin-bottom: 30px;
 }
 .sofax-features-content h4 {
   margin-bottom: 15px;
+}
+.sofax-features-content p {
+  font-size: 20px;
+}
+
+.features-v2 {
+  background-color: var(--accent-color);
+  padding: 30px 30px 0 30px;
+}
+
+.features-v5 {
+  border: 1px solid var(--dark-bg) !important;
+}
+.features-v5:hover {
+  box-shadow: 5px 5px 0 0 #0e0e0e;
 }
 
 .sofax-section-padding {
@@ -3017,16 +3924,16 @@ button.accordion-button {
 }
 
 .sofax-section-padding4 {
-  padding: 220px 0 120px;
+  padding: 200px 0 100px;
 }
 @media (max-width: 991px) {
   .sofax-section-padding4 {
-    padding: 190px 0 90px;
+    padding: 180px 0 80px;
   }
 }
 @media (max-width: 767px) {
   .sofax-section-padding4 {
-    padding: 170px 0 70px;
+    padding: 160px 0 60px;
   }
 }
 
@@ -3049,6 +3956,16 @@ button.accordion-button {
   margin: 0 auto;
   text-align: center;
 }
+.sofax-section-title.center.max-width-medium {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.sofax-section-title.center.max-width-large {
+  text-align: center;
+  max-width: 830px;
+  margin: 0 auto;
+}
 
 @media (max-width: 991px) {
   .sofax-title-btn {
@@ -3060,6 +3977,11 @@ button.accordion-button {
 
 .extra-mt {
   margin-top: 50px;
+}
+@media (max-width: 991px) {
+  .extra-mt {
+    margin-top: 40px;
+  }
 }
 
 .sofax-default-content h2 {
@@ -3074,14 +3996,91 @@ button.accordion-button {
   }
 }
 
-.light-color h2 {
-  color: var(--white-bg);
-}
-.light-color p {
-  color: var(--white-bg);
+/*1.3 pages css*/
+.sofax-integration-slider-icon-data-wrap.slick-initialized.slick-slider {
+  direction: rtl;
 }
 
-/*1.3 pages css*/
+.sofax-integration-slider-icon {
+  margin-bottom: 24px;
+}
+
+/*  sofax services section v3 */
+.sofax-service-iconbox-wrap {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 24px;
+}
+.sofax-service-iconbox-data h4 {
+  margin-bottom: 15px;
+}
+.sofax-service-iconbox-data p {
+  font-size: 20px;
+}
+.sofax-service-iconbox-icon {
+  flex-shrink: 0;
+}
+
+.sofax-service-table-item {
+  display: flex;
+  padding: 35px 0;
+  border-bottom: 1px solid #EAEDF0;
+}
+.sofax-service-table-item:first-child {
+  padding-top: 0;
+}
+.sofax-service-table-item:last-child {
+  padding-bottom: 0;
+  border: none;
+}
+@media (max-width: 991px) {
+  .sofax-service-table-item {
+    display: block;
+  }
+}
+.sofax-service-table-item:hover .sofax-default-btn.outline-btn {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+.sofax-service-table-title {
+  flex: 0 0 36%;
+}
+.sofax-service-table-title h3 {
+  margin: 0;
+  font-size: 35px;
+}
+@media (max-width: 1199px) {
+  .sofax-service-table-title h3 {
+    font-size: 30px;
+  }
+}
+.sofax-service-table-body {
+  flex: 0 0 45%;
+  padding: 0 30px;
+}
+@media (max-width: 991px) {
+  .sofax-service-table-body {
+    padding: 24px 0;
+  }
+}
+.sofax-service-table-body p {
+  font-size: 20px;
+}
+.sofax-service-table-btn {
+  flex: 0 0 19%;
+  text-align: right;
+}
+@media (max-width: 991px) {
+  .sofax-service-table-btn {
+    text-align: left;
+  }
+}
+.sofax-service-table-btn .sofax-default-btn.outline-btn {
+  padding: 17px 60px;
+}
+
 .sofax-pricing-title {
   text-align: center;
   margin-bottom: 50px;
@@ -3198,6 +4197,41 @@ button.accordion-button {
 @media (max-width: 767px) {
   .sofax-pricing-border {
     padding: 80px 0;
+  }
+}
+
+.sofax-blog-wrap-v4 {
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.0784313725);
+  border-radius: 10px;
+  background: #F9F9FA;
+  margin-bottom: 24px;
+  padding: 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.sofax-blog-wrap-v4:hover {
+  background-color: var(--white-bg);
+}
+.sofax-blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0 15px 0;
+}
+@media (max-width: 991px) {
+  .sofax-blog-meta img {
+    width: 100%;
+  }
+}
+.sofax-blog-content h4 {
+  margin-bottom: 30px;
+}
+.sofax-blog-img img {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .sofax-blog-img {
+    text-align: center;
   }
 }
 
