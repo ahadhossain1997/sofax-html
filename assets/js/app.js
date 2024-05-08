@@ -127,9 +127,10 @@
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 0,
-      speed: 10000,
+      speed: 8000,
       arrows: false,
       pauseOnHover: false,
+      rtl: true,
       cssEase: 'linear',
       responsive: [{
         breakpoint: 1349,
@@ -235,9 +236,11 @@
         }
       }]
     });
+
     // testimonial 2column slider active
 
-    $('.sofax-testimonial-2column-slider').slick({
+    //  v5
+    $('.sofax-testimonial-2column-sliderv5').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: false,
@@ -245,7 +248,6 @@
       prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
       nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
     });
-
     // button animation
 
     var buttons = document.querySelectorAll(".sofax-default-btn");
@@ -260,6 +262,49 @@
           span[0].style.left = relX + "px";
         });
       });
+    });
+
+    // pricing switch
+
+    jQuery.noConflict();
+    (function ($) {
+      $(function () {
+        var toggleSwitch = $("#js-pricing-switch input");
+        (function () {
+          $(toggleSwitch).change(function () {
+            // Change prices for plans
+            togglePriceContent();
+
+            // Toggle monthly/yearly style
+            $(".js-switch-label-monthly, .js-switch-label-yearly").toggleClass("active");
+          });
+        })();
+        function togglePriceContent() {
+          if ($(toggleSwitch).is(":checked") === true) {
+            // if toggle is yearly
+            $(".js-toggle-price-content").each(function () {
+              $(this).html($(this).data("per-monthly"));
+            });
+          } else {
+            // if toggle is monthly
+            $(".js-toggle-price-content").each(function () {
+              $(this).html($(this).data("per-yearly"));
+            });
+          }
+        }
+      });
+    })(jQuery);
+    window.odometerOptions = {
+      duration: 400
+    };
+    $(".switcher input[type='checkbox']").click(function () {
+      if ($(this).is(":checked")) {
+        $("#equity").addClass("show");
+        $("#cash").removeClass("show");
+      } else if ($(this).is(":not(:checked)")) {
+        $("#cash").addClass("show");
+        $("#equity").removeClass("show");
+      }
     });
 
     /*--------------------------------------------------------------
@@ -279,6 +324,67 @@
         mainClass: 'mfp-fade'
       });
     }
+    var popup_youtube = $('.aboutus-video');
+    if (popup_youtube.is_exist()) {
+      popup_youtube.magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade'
+      });
+    }
+    // testimonial slider
+
+    $('.sofax-testimonial-2column-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      fade: false,
+      adaptiveHeight: true,
+      infinite: false,
+      useTransform: true,
+      speed: 400,
+      cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
+      prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
+      nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
+    });
+    $('.sofax-testimonial-slider-nav').on('init', function (event, slick) {
+      $('.sofax-testimonial-slider-nav .slick-slide.slick-current').addClass('is-active');
+    }).slick({
+      slidesToShow: 7,
+      slidesToScroll: 7,
+      dots: false,
+      focusOnSelect: false,
+      infinite: false,
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5
+        }
+      }, {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      }, {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      }]
+    });
+    $('.sofax-testimonial-2column-slider').on('afterChange', function (event, slick, currentSlide) {
+      $('.sofax-testimonial-slider-nav').slick('slickGoTo', currentSlide);
+      var currrentNavSlideElem = '.sofax-testimonial-slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+      $('.sofax-testimonial-slider-nav .slick-slide.is-active').removeClass('is-active');
+      $(currrentNavSlideElem).addClass('is-active');
+    });
+    $('.sofax-testimonial-slider-nav').on('click', '.slick-slide', function (event) {
+      event.preventDefault();
+      var goToSingleSlide = $(this).data('slick-index');
+      $('.sofax-testimonial-2column-slider').slick('slickGoTo', goToSingleSlide);
+    });
     /*--------------------------------------------------------------
     sofax PRICING TABLE JS INIT
     ------------------------------------------------------------*/

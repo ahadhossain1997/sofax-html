@@ -275,7 +275,6 @@
   </header>
   <!--End landex-header-section -->
 
-
   <div class="sofax-hero-section">
     <div class="container">
       <div class="sofax-hero-content center">
@@ -319,6 +318,7 @@
       </div>
     </div>
   </div>
+
   <!-- End sofax hero section v1 -->
   <section class="sofax-slider-section">
     <div class="container">
@@ -346,6 +346,10 @@
   </section>
   <!--  end section -->
 
+
+
+
+
   <div class="section sofax-section-padding bg-light">
     <div class="container">
       <div class="sofax-section-title">
@@ -355,7 +359,7 @@
           </div>
           <div class="col-xl-5 col-lg-4 d-flex justify-content-end align-items-center">
             <div class="sofax-title-btn">
-              <a class="sofax-default-btn pill" href="#">View all services <span></span></a>
+              <a class="sofax-default-btn pill" href="#">View all services<span></span></a>
             </div>
           </div>
         </div>
@@ -495,20 +499,18 @@
   <!-- end section -->
   <section class="section sofax-section-padding bg-light">
     <div class="container">
-      <div class="sofax-section-title center">
+      <div class="sofax-section-title center pb-60">
         <h2>Discover the right price plan for you</h2>
       </div>
-      <!-- <div class="pricing-content-switch-wrap">
-      <div class="pricing-content-switch">
-        <div class="mas-content-switcher-toggle-label-1">Per Month</div>
-        <div class="mas-content-switcher-toggle-switch">
-          <label class="mas-content-switcher-toggle-switch-label">
-            <input class="input" type="checkbox">
-            <span class="mas-content-switcher-toggle-switch-slider"></span>
-          </label>
-        </div>
+      <div id="js-pricing-switch" class="pricing-switch">
+        <span class="switch-label js-switch-label-monthly">Per Month</span>
+        <label class="switch">
+          <input type="checkbox" checked="checked">
+          <span class="slider"></span>
+        </label>
+        <span class="switch-label js-switch-label-yearly active">Per Year
+      </span>
       </div>
-    </div> -->
       <div class="row">
         <div class="col-xl-4 col-md-6">
           <div class="sofax-pricing-wrap">
@@ -517,7 +519,7 @@
               <h4>Essential</h4>
             </div>
             <div class="sofax-pricing-price">
-              <h2>$19</h2>
+              <h2 class="price-card--price-number js-toggle-price-content odometer" data-per-monthly="$19" data-per-yearly="$29">$19</h2>
               <p>/Per Month</p>
             </div>
             <div class="sofax-pricing-body">
@@ -540,7 +542,7 @@
               <h4>Professional</h4>
             </div>
             <div class="sofax-pricing-price">
-              <h2>$49</h2>
+              <h2 class="price-card--price-number js-toggle-price-content odometer" data-per-monthly="$49" data-per-yearly="$69">$49</h2>
               <p>/Per Month</p>
             </div>
             <div class="sofax-pricing-body">
@@ -563,7 +565,7 @@
               <h4>Enterprise</h4>
             </div>
             <div class="sofax-pricing-price">
-              <h2>$129</h2>
+              <h2 class="price-card--price-number js-toggle-price-content odometer" data-per-monthly="$129" data-per-yearly="$199">$129</h2>
               <p>/Per Month</p>
             </div>
             <div class="sofax-pricing-body">
@@ -606,6 +608,7 @@
     </div>
   </section>
   <!-- end section -->
+
   <section class="sofax-section-padding2">
     <div class="container">
       <div class="sofax-section-title center">
@@ -981,6 +984,7 @@
     </div>
   </section>
   <!-- end section -->
+
   <section class="sofax-section-padding2 bg-light">
     <div class="container">
       <div class="sofax-cta-content">
@@ -1112,7 +1116,7 @@
   <script src="assets/js/ScrollSmoother.min.js"></script>
   <script src="assets/js/skill-bar.js"></script>
   <!-- <script src="assets/js/scrollsmooth.js"></script> -->
-  <script src="assets/js/faq.js"></script>
+  <script src="assets/js/accordion.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
 
   <script src="assets/js/app.js"></script>

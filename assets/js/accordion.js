@@ -21,4 +21,4 @@ Accordion.prototype.dropdown = function(e) {
       $el.find('.sofax-accordion-body').not($next).slideUp().parent().removeClass('open');
   };
 }
-var accordion = new Accordion($('.sofax-accordion-wrap'), false);
+var accordion = new Accordion($('.sofax-accordion-wrap1'), false);
