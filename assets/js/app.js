@@ -248,64 +248,25 @@
       prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
       nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
     });
+
     // button animation
 
-    var buttons = document.querySelectorAll(".sofax-default-btn");
-    buttons.forEach(function (button) {
-      ["mouseenter", "mouseout"].forEach(function (evt) {
-        button.addEventListener(evt, function (e) {
-          var parentOffset = button.getBoundingClientRect(),
-            relX = e.pageX - parentOffset.left,
-            relY = e.pageY - parentOffset.top;
-          var span = button.getElementsByTagName("span");
-          span[0].style.top = relY + "px";
-          span[0].style.left = relX + "px";
-        });
-      });
-    });
+    // const buttons = document.querySelectorAll(".sofax-default-btn");
 
-    // pricing switch
+    // buttons.forEach(button => {
+    //   ["mouseenter", "mouseout"].forEach(evt => {
+    //     button.addEventListener(evt, e => {
+    //       let parentOffset = button.getBoundingClientRect(),
+    //           relX = e.pageX - parentOffset.left,
+    //           relY = e.pageY - parentOffset.top;
 
-    jQuery.noConflict();
-    (function ($) {
-      $(function () {
-        var toggleSwitch = $("#js-pricing-switch input");
-        (function () {
-          $(toggleSwitch).change(function () {
-            // Change prices for plans
-            togglePriceContent();
+    //       const span = button.getElementsByTagName("span");
 
-            // Toggle monthly/yearly style
-            $(".js-switch-label-monthly, .js-switch-label-yearly").toggleClass("active");
-          });
-        })();
-        function togglePriceContent() {
-          if ($(toggleSwitch).is(":checked") === true) {
-            // if toggle is yearly
-            $(".js-toggle-price-content").each(function () {
-              $(this).html($(this).data("per-monthly"));
-            });
-          } else {
-            // if toggle is monthly
-            $(".js-toggle-price-content").each(function () {
-              $(this).html($(this).data("per-yearly"));
-            });
-          }
-        }
-      });
-    })(jQuery);
-    window.odometerOptions = {
-      duration: 400
-    };
-    $(".switcher input[type='checkbox']").click(function () {
-      if ($(this).is(":checked")) {
-        $("#equity").addClass("show");
-        $("#cash").removeClass("show");
-      } else if ($(this).is(":not(:checked)")) {
-        $("#cash").addClass("show");
-        $("#equity").removeClass("show");
-      }
-    });
+    //       span[0].style.top = relY + "px";
+    //       span[0].style.left = relX + "px";
+    //     });
+    //   });
+    // });
 
     /*--------------------------------------------------------------
     sofax MAGNIFIC POPUP JS INIT
@@ -385,6 +346,35 @@
       var goToSingleSlide = $(this).data('slick-index');
       $('.sofax-testimonial-2column-slider').slick('slickGoTo', goToSingleSlide);
     });
+
+    // pricing switch
+
+    var e = document.getElementById("filt-monthly"),
+      d = document.getElementById("filt-hourly"),
+      t = document.getElementById("switcher"),
+      m = document.getElementById("monthly"),
+      y = document.getElementById("yearly");
+    e.addEventListener("click", function () {
+      t.checked = false;
+      e.classList.add("toggler--is-activee");
+      d.classList.remove("toggler--is-activee");
+      m.classList.remove("hide");
+      y.classList.add("hide");
+    });
+    d.addEventListener("click", function () {
+      t.checked = true;
+      d.classList.add("toggler--is-activee");
+      e.classList.remove("toggler--is-activee");
+      m.classList.add("hide");
+      y.classList.remove("hide");
+    });
+    t.addEventListener("click", function () {
+      d.classList.toggle("toggler--is-activee");
+      e.classList.toggle("toggler--is-activee");
+      m.classList.toggle("hide");
+      y.classList.toggle("hide");
+    });
+
     /*--------------------------------------------------------------
     sofax PRICING TABLE JS INIT
     ------------------------------------------------------------*/
@@ -545,6 +535,14 @@
     };
     google.maps.event.addDomListener(window, 'load', init);
   }
+  Splitting();
+  gsap.from(".char", {
+    duration: 0.5,
+    opacity: 0,
+    stagger: 0.02,
+    y: 30,
+    ease: "power1.inOut"
+  });
 
   //sofax wow js
   var wow = new WOW({

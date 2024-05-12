@@ -1866,9 +1866,6 @@ blockquote {
 .light-color p {
   color: var(--white-bg);
 }
-.light-color span {
-  color: var(--white-bg);
-}
 
 /*1.1 layout css*/
 header.sofax-header-section {
@@ -2090,7 +2087,7 @@ a.social-icon img {
   z-index: 1;
   white-space: nowrap;
   text-overflow: ellipsis;
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -2111,6 +2108,11 @@ a.social-icon img {
   padding: 17px 40px;
   background-color: transparent;
   border: 1px solid var(--heading-color);
+  transition: all 0.4s;
+}
+.sofax-default-btn.outline-btn:hover {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 .sofax-default-btn.dark-btn {
   color: var(--white-color) !important;
@@ -2144,29 +2146,6 @@ a.social-icon img {
   color: var(--body-color) !important;
   font-weight: 400 !important;
   padding: 7px 18px;
-}
-
-.sofax-default-btn span {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background-color: #fff;
-  -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-.sofax-default-btn:hover {
-  color: #5D56F1;
-}
-
-.sofax-default-btn:hover span {
-  width: 225%;
-  height: 562.5px;
 }
 
 a.sofax-icon-btn {
@@ -2223,6 +2202,54 @@ a.sofax-icon-btn img {
   .sofax-portfolio-btn {
     margin-top: 40px;
   }
+}
+
+.sofax-default-btn::before {
+  position: absolute;
+  content: "";
+  border-radius: inherit;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: 102% 102%;
+  opacity: 0;
+}
+
+.sofax-default-btn .button-wraper {
+  transition: opacity 0.2s, transform 0.2s;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.sofax-default-btn:hover .button-wraper {
+  transform: translateY(-150%);
+  opacity: 0;
+}
+
+.sofax-default-btn:hover::before {
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.sofax-default-btn:hover::after {
+  transform: translate(0%, -50%);
+  opacity: 1;
+}
+
+.sofax-default-btn:after {
+  content: attr(data-text);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  line-height: 12.5px;
+  transform: translate(0, 100%);
+  transition: opacity 0.2s, transform 0.2s;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  white-space: nowrap;
 }
 
 input[type=text],
@@ -3102,11 +3129,13 @@ a.sofax-aboutus-video.aboutus-video img {
 }
 
 .sofax-testimonial-slider-nav .slider-sync-item img {
-  border: 2px solid red;
+  border: 2px solid green;
+  transition: all 0.4s;
+  cursor: pointer;
 }
 
-.sofax-testimonial-slider-nav .slick-slide.slick-current.slick-active.is-active .slider-sync-item img {
-  border: 2px solid green;
+.sofax-testimonial-slider-nav .slick-slide.slick-active.is-active .slider-sync-item img {
+  border: 2px solid red;
   border-radius: 100px;
 }
 
@@ -3275,10 +3304,10 @@ a.sofax-aboutus-video.aboutus-video img {
 .sofax-cta-content p {
   font-size: 20px;
 }
-.sofax-cta-content span {
+.sofax-cta-content span.cta-bottom {
   font-size: 18px;
   display: block;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 @media (max-width: 991px) {
@@ -3396,7 +3425,7 @@ a.sofax-aboutus-video.aboutus-video img {
 /* end  sofax pricing section */
 .sofax-pricing-wrap {
   border-radius: 10px;
-  padding: 40px;
+  padding: 36px;
   margin-bottom: 24px;
   transition: all 0.4s;
   background-color: var(--white-bg);
@@ -3451,216 +3480,78 @@ a.sofax-aboutus-video.aboutus-video img {
   margin-bottom: 0 !important;
 }
 
-.price-card--price-number:before {
-  content: "";
-  font-size: 2rem;
-  display: inline-block;
-  position: relative;
-}
-
-.price-card--price-number:after {
-  content: "";
-  font-size: 1.3rem;
-  display: inline-block;
-}
-
-.switch-label {
+.sofax-pricing-button-wrap {
   text-align: center;
-  font-weight: 600;
-  line-height: 28px;
-  color: var(--dark-bg);
-  font-size: 18px;
-  cursor: pointer;
-  padding: 0 1rem;
+  margin-bottom: 40px;
 }
 
-.switch-label.active {
-  opacity: 1;
-}
-
-.switch {
-  position: relative;
+.toggle, .toggler {
   display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.toggler {
+  font-weight: 400;
+  color: var(--dark-bg);
+}
+
+.toggler--is-activee {
+  font-weight: 600;
+  color: var(--dark-bg);
+}
+
+.b {
+  display: block;
+}
+
+.toggle {
+  position: relative;
   width: 70px;
   height: 36px;
-  vertical-align: -35%;
-  margin: 0;
+  border-radius: 50px;
+  background-color: var(--accent-color);
+  overflow: hidden;
+  box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.05);
 }
 
-.switch input {
-  display: none;
-}
-
-.slider {
+.check {
   position: absolute;
+  display: block;
   cursor: pointer;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--accent-color);
-  border-radius: 34px;
-  -webkit-transition: 0.1s;
-  transition: all 0.4s;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 6;
 }
 
-.slider::before {
+.check:checked ~ .switch {
+  right: 5px;
+  left: 57.5%;
+  transition: 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-property: left, right;
+  transition-delay: 0.08s, 0s;
+}
+
+.switch {
   position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  right: 56.5%;
   background-color: var(--dark-bg);
-  border-radius: 50%;
-  -webkit-transition: 0.1s;
-  transition: all 0.4s;
-}
-
-.pricing-switch {
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-#js-pricing-switch input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translate(35px, -7%);
-}
-
-@media (max-width: 980px) {
-  .switch-label {
-    display: inline-block;
-    width: auto;
-  }
-}
-#pricing {
-  background: #010c1a;
-  margin-bottom: 50px;
-}
-
-.switcher-box {
-  margin-top: 48px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-bottom: 45px;
-}
-
-.switcher-box span {
-  color: #fff;
-  padding: 0 12px;
-  font-size: 18px;
-  line-height: 32px;
-}
-
-.switcher input[type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-}
-
-.switcher input[type=checkbox]:focus {
-  outline: 0;
-}
-
-.switcher .toggle {
-  width: 59px;
-  height: 30px;
-  display: inline-block;
-  position: relative;
-  margin: 0;
-  border: 2px solid #654fec;
-  transition: all 0.2s ease;
-  border-radius: 43px;
-  -webkit-border-radius: 43px;
-  -moz-border-radius: 43px;
-  -ms-border-radius: 43px;
-  -o-border-radius: 43px;
-}
-
-.switcher .toggle:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(263.86deg, #345cef -0.33%, #9234ef 93.97%);
-  box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
-  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
-}
-
-.switcher .toggle:checked:after {
-  transform: translatex(28px);
-  -webkit-transform: translatex(28px);
-  -moz-transform: translatex(28px);
-  -ms-transform: translatex(28px);
-  -o-transform: translatex(28px);
-}
-
-.table-data h4 {
-  color: #fff;
-  text-align: center;
-}
-
-.table-data {
-  padding: 32px;
-  border: 1px solid transparent;
   border-radius: 30px;
-  background-image: linear-gradient(#020c1a, #020c1a), linear-gradient(263.86deg, #345cef -0.33%, #9234ef 93.97%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  z-index: 1;
+  transition: 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-property: left, right;
+  transition-delay: 0s, 0.08s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.table-data h3 {
-  color: #fff;
-  padding-top: 24px;
-}
-
-#pricing .table-data p {
-  text-align: left;
-  padding-top: 24px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #fff;
-}
-
-.table-data h3 span {
-  font-size: 14px;
-  line-height: 21px;
-  padding: 4px 10px;
-  background: linear-gradient(263.86deg, rgba(52, 92, 239, 0.2) -0.33%, rgba(146, 52, 239, 0.2) 93.97%);
-  border-radius: 4px;
-  font-weight: 400;
-}
-
-.table-data p:not(:last-child) {
-  padding-bottom: 24px;
-  position: relative;
-}
-
-.table-data p:not(:last-child)::after {
-  position: absolute;
-  content: "";
-  width: 130px;
-  height: 1px;
-  background: #474c61;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.tab-content {
+.hide {
   display: none;
-}
-
-.tab-content.show {
-  display: block;
 }
 
 .sofax-content-shape {
@@ -3752,7 +3643,7 @@ a.sofax-aboutus-video.aboutus-video img {
 
 .hero2-shape {
   position: absolute;
-  bottom: -6%;
+  bottom: 8%;
   left: 38%;
 }
 @media (max-width: 1399px) {

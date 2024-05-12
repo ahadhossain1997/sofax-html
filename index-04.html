@@ -15,6 +15,7 @@
   <!-- End google font  -->
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/animate.css">
@@ -22,8 +23,8 @@
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/aos.css">
   <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/splitting.css">
   <link rel="stylesheet" href="assets/css/icomoon.css">
-
 
   <!-- Code Editor  -->
 
@@ -261,8 +262,8 @@
         </div>
 
         <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
-          <a class="sofax-default-btn pill sofax-header-btn" href="contact-us.html">
-            Contact Us
+          <a class="sofax-default-btn pill sofax-header-btn" id data-text="Contact Us " href="contact-us.html">
+            <span class="button-wraper">Contact Us </span>
           </a>
         </div>
         <!-- mobile menu trigger -->
@@ -282,8 +283,13 @@
         <p>We are a specialized agency for businesses looking to increase their online presence and brand awareness who execute comprehensive social media strategies tailored to meet our client's unique goals and objectives.</p>
       </div>
       <div class="sofax-hero-btn-wrap">
-        <a class="sofax-default-btn pill" href="#">Contact Us</a>
-        <a class="sofax-default-btn pill outline-btn" href="">View Our Services</a>
+        <a class="sofax-default-btn pill whitespace--normal" id data-text="Contact Us" href="#">
+          <span class="button-wraper">Contact Us</span>
+        </a>
+        <a class="sofax-default-btn pill outline-btn whitespace--normal" id data-text="View Our Services" href="#">
+          <span class="button-wraper">View Our Services</span>
+        </a>
+        <a class="" href=""></a>
         <div class="hero4-shape1">
           <img src="assets/images/v4/shape1.png" alt="">
         </div>
@@ -352,7 +358,9 @@
             <p>Tailor your posts to address their interests, pain points and preferences Use a mix of media, such as images, videos and infographics.</p>
           </div>
           <div class="sofax-title-btn extra-mt">
-            <a class="sofax-default-btn pill" href="#">Learn More<span></span></a>
+            <a class="sofax-default-btn pill" id data-text="Learn More" href="#">
+              <span class="button-wraper">Learn More</span>
+            </a>
           </div>
         </div>
       </div>
@@ -379,7 +387,10 @@
             <p>Crafting a customized social media strategy aligned with the client's business objectives, target users.</p>
           </div>
           <div class="sofax-service-table-btn">
-            <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a>
+            <a class="sofax-default-btn pill outline-btn" id data-text="Deatails" href="#">
+              <span class="button-wraper">Deatails</span>
+            </a>
+            <!-- <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a> -->
           </div>
         </div>
         <div class="sofax-service-table-item">
@@ -390,7 +401,10 @@
             <p>Strategies to engage the audience actively include commenting, responding to messages.</p>
           </div>
           <div class="sofax-service-table-btn">
-            <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a>
+            <a class="sofax-default-btn pill outline-btn" id data-text="Deatails" href="#">
+              <span class="button-wraper">Deatails</span>
+            </a>
+            <!-- <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a> -->
           </div>
         </div>
         <div class="sofax-service-table-item">
@@ -401,7 +415,10 @@
             <p>Developing engaging & shareable content, including text, images, videos, and other multimedia etc.</p>
           </div>
           <div class="sofax-service-table-btn">
-            <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a>
+            <a class="sofax-default-btn pill outline-btn" id data-text="Deatails" href="#">
+              <span class="button-wraper">Deatails</span>
+            </a>
+            <!-- <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a> -->
           </div>
         </div>
         <div class="sofax-service-table-item">
@@ -412,7 +429,10 @@
             <p>Building and nurturing an online community around the brand, fostering positive interactions.</p>
           </div>
           <div class="sofax-service-table-btn">
-            <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a>
+            <a class="sofax-default-btn pill outline-btn" id data-text="Deatails" href="#">
+              <span class="button-wraper">Deatails</span>
+            </a>
+            <!-- <a class="sofax-default-btn pill outline-btn" href="#">Deatails</a> -->
           </div>
         </div>
       </div>
@@ -699,7 +719,11 @@
               </div>
               <input class="button-text" type="email" placeholder="Write your message here...">
               <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link text-white" href="">Submite now</a></li>
+                <li class="nav-item">
+                  <a class="nav-link text-white whitespace--normal" id data-text="Submite now" href="#">
+                    <span class="button-wraper">Submite now</span>
+                  </a>
+                </li>
               </ul>
           </div>
         </div>
@@ -808,6 +832,7 @@
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/menu/menu.js"></script>
   <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/gsap-latest-beta.min.js"></script>
   <script src="assets/js/isotope.pkgd.min.js"></script>
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
@@ -815,6 +840,8 @@
   <script src="assets/js/slick.js"></script>
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/splitting.min.js"></script>
+
   <script src="assets/js/modernizr.min.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>
   <script src="assets/js/ScrollSmoother.min.js"></script>
@@ -824,7 +851,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
 
   <script src="assets/js/app.js"></script>
-
 
 </body>
 </html>

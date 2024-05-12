@@ -15,6 +15,7 @@
   <!-- End google font  -->
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/animate.css">
@@ -22,8 +23,8 @@
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/aos.css">
   <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/splitting.css">
   <link rel="stylesheet" href="assets/css/icomoon.css">
-
 
   <!-- Code Editor  -->
 
@@ -261,8 +262,8 @@
         </div>
 
         <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
-          <a class="sofax-default-btn pill sofax-header-btn" href="contact-us.html">
-            Get started
+          <a class="sofax-default-btn pill sofax-header-btn" id data-text="Get started" href="contact-us.html">
+            <span class="button-wraper">Get started</span>
           </a>
         </div>
         <!-- mobile menu trigger -->
@@ -277,6 +278,10 @@
 
   <div class="sofax-hero-section">
     <div class="container">
+      <!-- <div class="sofax-hero-slider-title">
+      <h1 data-splitting>Best platfrom to manage your sales</h1>
+      <p>The best platform for you will depend on factors such as your business size, budget, integration needs and specific sales processes. Offering visual pipeline management sales reporting & email interation.</p>
+  </div> -->
       <div class="sofax-hero-content center">
         <h1>Best platfrom to manage your sales</h1>
         <p>The best platform for you will depend on factors such as your business size, budget, integration needs and specific sales processes. Offering visual pipeline management sales reporting & email interation.</p>
@@ -318,8 +323,7 @@
       </div>
     </div>
   </div>
-
-  <!-- End sofax hero section v1 -->
+  <!-- End sofax hero section -->
   <section class="sofax-slider-section">
     <div class="container">
       <div class="sofax-title-section">
@@ -344,12 +348,7 @@
       </div>
     </div>
   </section>
-  <!--  end section -->
-
-
-
-
-
+  <!--  end brand logo section -->
   <div class="section sofax-section-padding bg-light">
     <div class="container">
       <div class="sofax-section-title">
@@ -359,7 +358,9 @@
           </div>
           <div class="col-xl-5 col-lg-4 d-flex justify-content-end align-items-center">
             <div class="sofax-title-btn">
-              <a class="sofax-default-btn pill" href="#">View all services<span></span></a>
+              <a class="sofax-default-btn pill whitespace--normal" id data-text="View all services" href="#">
+                <span class="button-wraper">View all services</span>
+              </a>
             </div>
           </div>
         </div>
@@ -404,7 +405,7 @@
       </div>
     </div>
   </div>
-  <!-- end section -->
+  <!-- end service section -->
   <div class="sofax-section-padding2">
     <div class="container">
       <div class="row">
@@ -451,7 +452,7 @@
       </div>
     </div>
   </div>
-  <!-- end section -->
+  <!-- end content1 section -->
   <section class="sofax-section-padding3">
     <div class="container">
       <div class="row">
@@ -490,102 +491,178 @@
             </div>
           </div>
           <div class="sofax-title-btn extra-mt">
-            <a class="sofax-default-btn pill" href="#">Get started<span></span></a>
+            <a class="sofax-default-btn pill whitespace--normal" id data-text="Get started" href="#">
+              <span class="button-wraper">Get started</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- end section -->
+  <!-- end content2 section -->
   <section class="section sofax-section-padding bg-light">
     <div class="container">
       <div class="sofax-section-title center pb-60">
         <h2>Discover the right price plan for you</h2>
       </div>
-      <div id="js-pricing-switch" class="pricing-switch">
-        <span class="switch-label js-switch-label-monthly">Per Month</span>
-        <label class="switch">
-          <input type="checkbox" checked="checked">
-          <span class="slider"></span>
-        </label>
-        <span class="switch-label js-switch-label-yearly active">Per Year
-      </span>
+      <div class="sofax-pricing-button-wrap">
+        <label class="toggler toggler--is-activee" id="filt-monthly">per Month</label>
+        <div class="toggle">
+          <input type="checkbox" id="switcher" class="check">
+          <b class="b switch"></b>
+        </div>
+        <label class="toggler" id="filt-hourly">per year</label>
       </div>
-      <div class="row">
-        <div class="col-xl-4 col-md-6">
-          <div class="sofax-pricing-wrap">
-            <div class="sofax-pricing-header">
-              <img src="assets/images/v1/icon7.png" alt="">
-              <h4>Essential</h4>
-            </div>
-            <div class="sofax-pricing-price">
-              <h2 class="price-card--price-number js-toggle-price-content odometer" data-per-monthly="$19" data-per-yearly="$29">$19</h2>
-              <p>/Per Month</p>
-            </div>
-            <div class="sofax-pricing-body">
-              <h6>Key features:</h6>
-              <ul>
-                <li><img src="assets/images/v1/icon8.png" alt="">Lead, deal, contact, calendar and pipeline management</li>
-                <li><img src="assets/images/v1/icon8.png" alt="">Seamless data import and 400+ integrations</li>
-                <li><img src="assets/images/v1/icon8.png" alt="">24/7, multi-language support</li>
-              </ul>
-            </div>
-            <div class="sofax-pricing-footer">
-              <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-md-6">
-          <div class="sofax-pricing-wrap active">
-            <div class="sofax-pricing-header">
-              <img src="assets/images/v1/icon5.png" alt="">
-              <h4>Professional</h4>
-            </div>
-            <div class="sofax-pricing-price">
-              <h2 class="price-card--price-number js-toggle-price-content odometer" data-per-monthly="$49" data-per-yearly="$69">$49</h2>
-              <p>/Per Month</p>
-            </div>
-            <div class="sofax-pricing-body">
-              <h6>Key features:</h6>
-              <ul>
-                <li><img src="assets/images/v1/icon8.png" alt="">Full email sync with templates, open, click tracking & emailing</li>
-                <li><img src="assets/images/v1/icon8.png" alt="">Automations builder, including email sequences</li>
-                <li><img src="assets/images/v1/icon8.png" alt="">Meeting, email and video call </li>
-              </ul>
-            </div>
-            <div class="sofax-pricing-footer">
-              <a class="sofax-default-btn d-block pill" href="#">Purchase now</a>
+      <div id="monthly" class="wrapper-full">
+        <div class="row">
+          <div class="col-xl-4 col-md-6">
+            <div class="sofax-pricing-wrap">
+              <div class="sofax-pricing-header">
+                <img src="assets/images/v1/icon7.png" alt="">
+                <h4>Essential</h4>
+              </div>
+              <div class="sofax-pricing-price">
+                <h2>$19</h2>
+                <p>/per month</p>
+              </div>
+              <div class="sofax-pricing-body">
+                <h6>Key features:</h6>
+                <ul>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Lead, deal, contact, calendar and pipeline management</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Seamless data import and 400+ integrations</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">24/7, multi-language support</li>
+                </ul>
+              </div>
+              <div class="sofax-pricing-footer">
+                <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-xl-4 col-md-6">
-          <div class="sofax-pricing-wrap">
-            <div class="sofax-pricing-header">
-              <img src="assets/images/v1/icon6.png" alt="">
-              <h4>Enterprise</h4>
-            </div>
-            <div class="sofax-pricing-price">
-              <h2 class="price-card--price-number js-toggle-price-content odometer" data-per-monthly="$129" data-per-yearly="$199">$129</h2>
-              <p>/Per Month</p>
-            </div>
-            <div class="sofax-pricing-body">
-              <h6>Key features:</h6>
-              <ul>
-                <li><img src="assets/images/v1/icon8.png" alt="">Streamlined lead routing and account access control</li>
-                <li><img src="assets/images/v1/icon8.png" alt="">Document and contract management with e-signatures</li>
-                <li><img src="assets/images/v1/icon8.png" alt="">Revenue forecasts & reporting</li>
-              </ul>
-            </div>
-            <div class="sofax-pricing-footer">
-              <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
+          <div class="col-xl-4 col-md-6">
+            <div class="sofax-pricing-wrap active">
+              <div class="sofax-pricing-header">
+                <img src="assets/images/v1/icon5.png" alt="">
+                <h4>Professional</h4>
+              </div>
+              <div class="sofax-pricing-price">
+                <h2>$49</h2>
+                <p>/per month</p>
+              </div>
+              <div class="sofax-pricing-body">
+                <h6>Key features:</h6>
+                <ul>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Full email sync with templates, open, click tracking & emailing</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Automations builder, including email sequences</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Meeting, email and video call </li>
+                </ul>
+              </div>
+              <div class="sofax-pricing-footer">
+                <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="col-xl-4 col-md-6">
+            <div class="sofax-pricing-wrap">
+              <div class="sofax-pricing-header">
+                <img src="assets/images/v1/icon6.png" alt="">
+                <h4>Enterprise</h4>
+              </div>
+              <div class="sofax-pricing-price">
+                <h2>$129</h2>
+                <p>/per month</p>
+              </div>
+              <div class="sofax-pricing-body">
+                <h6>Key features:</h6>
+                <ul>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Streamlined lead routing and account access control</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Document and contract management with e-signatures</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Revenue forecasts & reporting</li>
+                </ul>
+              </div>
+              <div class="sofax-pricing-footer">
+                <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
+              </div>
+            </div>
+          </div>
 
+        </div>
+      </div>
+      <div id="yearly" class="wrapper-full hide">
+        <div class="row">
+          <div class="col-xl-4 col-md-6">
+            <div class="sofax-pricing-wrap">
+              <div class="sofax-pricing-header">
+                <img src="assets/images/v1/icon7.png" alt="">
+                <h4>Essential</h4>
+              </div>
+              <div class="sofax-pricing-price">
+                <h2 data-dollar-amount="29">$29</h2>
+                <p>/Per year</p>
+              </div>
+              <div class="sofax-pricing-body">
+                <h6>Key features:</h6>
+                <ul>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Lead, deal, contact, calendar and pipeline management</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Seamless data import and 400+ integrations</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">24/7, multi-language support</li>
+                </ul>
+              </div>
+              <div class="sofax-pricing-footer">
+                <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6">
+            <div class="sofax-pricing-wrap active">
+              <div class="sofax-pricing-header">
+                <img src="assets/images/v1/icon5.png" alt="">
+                <h4>Professional</h4>
+              </div>
+              <div class="sofax-pricing-price">
+                <h2 data-dollar-amount="69">$69</h2>
+                <p>/Per year</p>
+              </div>
+              <div class="sofax-pricing-body">
+                <h6>Key features:</h6>
+                <ul>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Full email sync with templates, open, click tracking & emailing</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Automations builder, including email sequences</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Meeting, email and video call </li>
+                </ul>
+              </div>
+              <div class="sofax-pricing-footer">
+                <a class="sofax-default-btn d-block pill" href="#">Purchase now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6">
+            <div class="sofax-pricing-wrap">
+              <div class="sofax-pricing-header">
+                <img src="assets/images/v1/icon6.png" alt="">
+                <h4>Enterprise</h4>
+              </div>
+              <div class="sofax-pricing-price">
+                <h2 data-dollar-amount="199">$199</h2>
+                <p>/Per year</p>
+              </div>
+              <div class="sofax-pricing-body">
+                <h6>Key features:</h6>
+                <ul>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Streamlined lead routing and account access control</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Document and contract management with e-signatures</li>
+                  <li><img src="assets/images/v1/icon8.png" alt="">Revenue forecasts & reporting</li>
+                </ul>
+              </div>
+              <div class="sofax-pricing-footer">
+                <a class="sofax-default-btn outline-btn d-block pill" href="#">Purchase now</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <!-- end section -->
+  <!-- end pricing section -->
   <section class="sofax-section-padding2 dark-bg">
     <div class="container">
       <div class="row">
@@ -599,16 +676,16 @@
             <h2>Integrate your tech stack & many tools</h2>
             <p>Integrating with the apps that drive your business. Seamlessly connect with your favorite or new tools with tailored recommendations.</p>
             <div class="extra-mt">
-              <a class="sofax-default-btn pill " href="#">View all integrations</a>
+              <a class="sofax-default-btn pill whitespace--normal" id data-text="View all integrations" href="#">
+                <span class="button-wraper">View all integrations </span>
+              </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
-  <!-- end section -->
-
+  <!-- end integration section -->
   <section class="sofax-section-padding2">
     <div class="container">
       <div class="sofax-section-title center">
@@ -983,16 +1060,17 @@
       </div>
     </div>
   </section>
-  <!-- end section -->
-
+  <!-- end testimonial section -->
   <section class="sofax-section-padding2 bg-light">
     <div class="container">
       <div class="sofax-cta-content">
         <h2>Driving business growth with a new experience</h2>
         <p>Start tracking your sales pipeline, manage leads, and automate your entire sales process in one place so you can easily focus on selling.</p>
         <div class="extra-mt">
-          <a class="sofax-default-btn pill" href="#">Create a free account</a>
-          <span>Full access. No credit card needed.</span>
+          <a class="sofax-default-btn pill whitespace--normal" id data-text="Create a free account" href="#">
+            <span class="button-wraper">Create a free account</span>
+          </a>
+          <span class="cta-bottom">Full access. No credit card needed.</span>
         </div>
         <div class="sofax-cta-shape">
           <img src="assets/images/v1/shape4.png" alt="">
@@ -1000,10 +1078,19 @@
       </div>
     </div>
   </section>
-  <!-- end section -->
+  <!-- end cta section -->
 
 
 
+  <!-- <section class="hero-slider-content2">
+  <div class="container">
+      <div class="test">
+          <div class="hero-slider-title">
+              <h1 data-splitting> Weebix - <em>IT Service</em> And <em>Technology</em> HTML Template</h1>
+          </div>
+      </div>
+  </div>
+</section> -->
 
 
 
@@ -1104,6 +1191,7 @@
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/menu/menu.js"></script>
   <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/gsap-latest-beta.min.js"></script>
   <script src="assets/js/isotope.pkgd.min.js"></script>
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
@@ -1111,6 +1199,8 @@
   <script src="assets/js/slick.js"></script>
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/splitting.min.js"></script>
+
   <script src="assets/js/modernizr.min.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>
   <script src="assets/js/ScrollSmoother.min.js"></script>
@@ -1120,7 +1210,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
 
   <script src="assets/js/app.js"></script>
-
 
 </body>
 </html>
