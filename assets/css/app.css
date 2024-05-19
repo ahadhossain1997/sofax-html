@@ -391,7 +391,7 @@ h5,
 
 h6,
 .h6 {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 p {
@@ -677,6 +677,10 @@ p:last-child {
 
 .gray-bg {
   background-color: var(--gray-bg);
+}
+
+.dark-bg {
+  background-color: var(--dark-bg);
 }
 
 .yellow-bg {
@@ -1823,8 +1827,25 @@ blockquote {
   box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.08);
 }
 
+.ml-62 {
+  margin: 20px 0 0 60px;
+}
+@media (max-width: 991px) {
+  .ml-62 {
+    margin: 30px 0 0 0;
+  }
+}
+
+.mr-60 {
+  margin-right: 60px;
+}
+
 .ml-70 {
   margin-left: 70px;
+}
+
+.ml-55 {
+  margin-left: 55px;
 }
 
 .mb-40 {
@@ -1840,9 +1861,22 @@ blockquote {
   padding-bottom: 60px !important;
 }
 
-@media (max-width: 991px) {
-  .mt-24 {
-    margin-top: 24px;
+.mt-24 {
+  margin-top: 24px;
+}
+
+.ml-650 {
+  margin-left: 65%;
+}
+@media (max-width: 767px) {
+  .ml-650 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .mt-30 {
+    margin-top: 30px;
   }
 }
 
@@ -1850,11 +1884,24 @@ blockquote {
   margin-bottom: 10px !important;
 }
 
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
 .accent-bg {
   background-color: var(--accent-color);
 }
 
+.light-color {
+  color: var(--white-bg);
+}
+.light-color h1 {
+  color: var(--white-bg);
+}
 .light-color h2 {
+  color: var(--white-bg);
+}
+.light-color h3 {
   color: var(--white-bg);
 }
 .light-color h4 {
@@ -1880,6 +1927,14 @@ header.sofax-header-section {
 header.sofax-header-section.sticky-menu {
   box-shadow: 0 4px 80px rgba(0, 0, 0, 0.06);
   background-color: var(--white-bg);
+}
+
+header.sofax-header-section.sticky-menu.inner-header {
+  background-color: var(--dark-bg) !important;
+}
+
+.inner-header .site-menu-main .nav-link-item {
+  color: var(--white-color) !important;
 }
 
 .sofax-footer-top {
@@ -2076,7 +2131,8 @@ a.social-icon img {
 }
 
 /*1.2 components css*/
-.sofax-default-btn {
+.sofax-default-btn,
+#sofax-submit-btn {
   font-size: 16px;
   line-height: 24px;
   padding: 18px 34px;
@@ -2101,47 +2157,60 @@ a.social-icon img {
   position: relative;
   transform-style: preserve-3d;
 }
-.sofax-default-btn.sofax-header-btn {
+.sofax-default-btn.sofax-header-btn,
+#sofax-submit-btn.sofax-header-btn {
   padding: 13px 36px;
 }
-.sofax-default-btn.outline-btn {
+.sofax-default-btn.outline-btn,
+#sofax-submit-btn.outline-btn {
   padding: 17px 40px;
   background-color: transparent;
   border: 1px solid var(--heading-color);
   transition: all 0.4s;
 }
-.sofax-default-btn.outline-btn:hover {
+.sofax-default-btn.outline-btn:hover,
+#sofax-submit-btn.outline-btn:hover {
   background: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
-.sofax-default-btn.dark-btn {
+.sofax-default-btn.dark-btn,
+#sofax-submit-btn.dark-btn {
   color: var(--white-color) !important;
   background-color: var(--dark-bg);
 }
-.sofax-default-btn.disabled, .sofax-default-btn:disabled {
+.sofax-default-btn.disabled, .sofax-default-btn:disabled,
+#sofax-submit-btn.disabled,
+#sofax-submit-btn:disabled {
   opacity: 1;
 }
-.sofax-default-btn.d-block {
+.sofax-default-btn.d-block,
+#sofax-submit-btn.d-block {
   width: 100%;
 }
-.sofax-default-btn.pill {
+.sofax-default-btn.pill,
+#sofax-submit-btn.pill {
   border-radius: 50px;
 }
-.sofax-default-btn.btn-icon {
+.sofax-default-btn.btn-icon,
+#sofax-submit-btn.btn-icon {
   padding: 9px 24px;
 }
-.sofax-default-btn:focus {
+.sofax-default-btn:focus,
+#sofax-submit-btn:focus {
   box-shadow: none;
 }
-.sofax-default-btn.pricing-btn-v4:hover {
+.sofax-default-btn.pricing-btn-v4:hover,
+#sofax-submit-btn.pricing-btn-v4:hover {
   color: var(--heading-color) !important;
   background-color: var(--accent-color);
 }
-.sofax-default-btn.pricing-btnv4:hover {
+.sofax-default-btn.pricing-btnv4:hover,
+#sofax-submit-btn.pricing-btnv4:hover {
   color: var(--white-color) !important;
   background-color: var(--heading-color);
 }
-.sofax-default-btn.blog-btn {
+.sofax-default-btn.blog-btn,
+#sofax-submit-btn.blog-btn {
   background-color: var(--light-color);
   color: var(--body-color) !important;
   font-weight: 400 !important;
@@ -2252,6 +2321,22 @@ a.sofax-icon-btn img {
   white-space: nowrap;
 }
 
+.portfolio-project-btn a {
+  margin-left: 24px;
+}
+.portfolio-project-btn a:first-child {
+  margin-left: 0;
+}
+@media (max-width: 991px) {
+  .portfolio-project-btn a {
+    margin-bottom: 24px;
+  }
+}
+
+.sofax-404-bottom-btn {
+  text-align: center;
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
@@ -2264,13 +2349,24 @@ input, textarea {
   margin: 0;
   width: 100%;
   height: 60px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   border-radius: 50px;
-  padding: 15px 24px !important;
+  padding: 15px 30px !important;
   border: none !important;
   transition: all 0.4s;
-  border: 1px solid #747474;
+  border: 1px solid var(--grey-color) !important;
+}
+input[type=text]:focus-visible,
+input[type=email]:focus-visible,
+input[type=password]:focus-visible,
+input[type=url]:focus-visible,
+input[type=tel]:focus-visible,
+input[type=time]:focus-visible,
+input[type=date]:focus-visible,
+input[type=search]:focus-visible,
+input:focus-visible, textarea:focus-visible {
+  outline: navajowhite;
 }
 
 input:focus,
@@ -2280,8 +2376,7 @@ textarea:focus {
 
 textarea {
   height: 200px;
-  resize: none;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 @media (max-width: 767px) {
   textarea {
@@ -2291,37 +2386,37 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: #3C3C3C;
+  color: var(--body-color);
   opacity: 1;
 }
 
 input:-moz-placeholder,
 textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #3C3C3C;
+  color: var(--body-color);
   opacity: 1;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #3C3C3C;
+  color: var(--body-color);
   opacity: 1;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #3C3C3C;
+  color: var(--body-color);
   opacity: 1;
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder { /* Microsoft Edge */
-  color: #3C3C3C;
+  color: var(--body-color);
   opacity: 1;
 }
 
 input::placeholder,
 textarea::placeholder { /* Most modern browsers support this now. */
-  color: #3C3C3C;
+  color: var(--body-color);
   opacity: 1;
 }
 
@@ -2347,6 +2442,11 @@ button#sofax-subscription-btn {
   width: 230px;
   height: 50px;
   background-color: var(--accent-color);
+  transition: all 0.4s;
+}
+button#sofax-subscription-btn:hover {
+  color: var(--white-color);
+  background: var(--dark-bg);
 }
 @media (max-width: 767px) {
   button#sofax-subscription-btn {
@@ -2396,6 +2496,11 @@ button#sofax-subscription-btn {
   width: 100%;
   margin-top: 12px;
   height: 50px;
+  transition: all 0.4s;
+}
+.sofax-subcribe-btn2:hover {
+  background: var(--dark-bg);
+  color: var(--white-color);
 }
 
 .form-content-box {
@@ -2477,7 +2582,7 @@ button#sofax-subscription-btn {
   height: 50px;
   width: 100%;
   color: var(--dark-bg);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   border-radius: 50px;
   background-color: var(--white-color) !important;
@@ -2500,6 +2605,277 @@ button#sofax-subscription-btn {
 }
 .sofax-subscription-field5 input .sofax-footer-btn {
   position: relative;
+}
+
+.sofax-subscription-field-inner {
+  position: relative;
+  margin-bottom: 30px;
+}
+.sofax-subscription-field-inner input {
+  margin: 0;
+  height: 60px;
+  width: 100%;
+  color: var(--body-color);
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: var(--white-color) !important;
+  padding: 15px 28px !important;
+  transition: all 0.4s;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--dark-bg) !important;
+}
+.sofax-subscription-field-inner input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--body-color);
+}
+.sofax-subscription-field-inner input::-moz-placeholder { /* Firefox 19+ */
+  color: var(--body-color);
+}
+.sofax-subscription-field-inner input:-ms-input-placeholder { /* IE 10+ */
+  color: var(--body-color);
+}
+.sofax-subscription-field-inner input:-moz-placeholder { /* Firefox 18- */
+  color: var(--body-color);
+}
+.sofax-subscription-field-inner .search-icon-img {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+.sofax-subscription-field-Categories {
+  border: 1px solid var(--dark-bg);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.sofax-subscription-field-Categories h4 {
+  margin-bottom: 24px;
+}
+.sofax-subscription-field-Categories ul {
+  list-style: show !important;
+}
+.sofax-subscription-field-Categories ul li {
+  margin-bottom: 15px !important;
+}
+.sofax-subscription-field-Categories ul li:last-child {
+  margin-bottom: 0 !important;
+}
+.sofax-subscription-field-Categories ul li a {
+  color: var(--body-color);
+}
+.sofax-subscription-field-post {
+  border: 1px solid var(--dark-bg);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.sofax-subscription-field-post h4 {
+  margin-bottom: 24px;
+}
+.sofax-subscription-field-post .title-post-thumb {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.sofax-subscription-field-post .title-post-thumb:last-child {
+  margin-bottom: 0 !important;
+}
+.sofax-subscription-field-post .title-post-content ul li {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+.sofax-subscription-field-group {
+  border: 1px solid var(--dark-bg);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.sofax-subscription-field-group h4 {
+  margin-bottom: 24px;
+}
+.sofax-subscription-field-group a {
+  margin: 0 5px 10px 0;
+  font-size: 18px !important;
+  line-height: 24px;
+  padding: 13px 22px !important;
+}
+.sofax-subscription-field-blog-inner-footer {
+  background: var(--dark-bg);
+  padding: 30px;
+  border-radius: 20px;
+}
+.sofax-subscription-field-blog-inner-footer h4 {
+  margin-bottom: 24px;
+}
+.sofax-subscription-field-inner-button input {
+  border: 1px solid var(--light-color) !important;
+  color: var(--white-color) !important;
+  font-size: 18px !important;
+  line-height: 28px;
+  background: transparent !important;
+  font-weight: 400;
+}
+.sofax-subscription-field-inner-button input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--white-color);
+}
+.sofax-subscription-field-inner-button input::-moz-placeholder { /* Firefox 19+ */
+  color: var(--white-color);
+}
+.sofax-subscription-field-inner-button input:-ms-input-placeholder { /* IE 10+ */
+  color: var(--white-color);
+}
+.sofax-subscription-field-inner-button input:-moz-placeholder { /* Firefox 18- */
+  color: var(--white-color);
+}
+
+.sofax-career-details-form {
+  padding: 40px 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.0784313725);
+}
+@media (max-width: 991px) {
+  .sofax-career-details-form {
+    margin-top: 40px;
+  }
+}
+.sofax-career-details-form h3 {
+  margin-bottom: 30px;
+}
+.sofax-career-details-form-box {
+  margin-bottom: 24px;
+}
+.sofax-career-details-form-box:last-child {
+  margin-bottom: 0;
+}
+.sofax-career-details-form-box h4 {
+  margin-bottom: 15px;
+}
+.sofax-career-details-form-box input {
+  border: 1px solid var(--grey-color) !important;
+  border-radius: 50px;
+  outline: none;
+  color: var(--body-color);
+  font-weight: 400;
+}
+.sofax-career-details-form-box textarea {
+  border: 1px solid var(--grey-color) !important;
+  border-radius: 15px;
+  font-weight: 400;
+}
+
+.sofax-form-header {
+  background: var(--dark-bg);
+}
+.sofax-form-header img {
+  padding: 20px 0;
+}
+.sofax-form-header-logo {
+  text-align: center;
+}
+
+.sofax-form-field-box {
+  max-width: 67%;
+  margin-left: 18%;
+}
+.sofax-form-field-box h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+.sofax-form-content1 p {
+  max-width: 580px;
+  margin-bottom: 20px;
+}
+.sofax-form-content1 span {
+  font-weight: 700;
+}
+
+.login {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.login-with-google a {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  border: 1px solid var(--dark-bg);
+  padding: 15px 0;
+  width: 100%;
+  border-radius: 50px;
+}
+
+.form-bottom-text p {
+  text-align: center;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: space-between;
+}
+.forgot-password a {
+  color: var(--body-color);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.time {
+  color: #fff;
+  text-transform: uppercase;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.time span {
+  color: var(--accent-color);
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 400;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.08);
+  padding: 35px 55px 35px 55px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+.time div {
+  color: var(--dark-bg);
+  font-size: 75px;
+  line-height: 85px;
+  font-weight: 700;
+}
+
+.sofax-countdown-content {
+  margin-top: 80px !important;
+  padding-bottom: 0 !important;
+}
+
+.sofax-countdown-bottom-text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.field-icon {
+  float: right;
+  margin-right: 25px;
+  margin-top: -38px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .sofax-breadcrumb {
@@ -2591,7 +2967,7 @@ h1.post__title {
 .sofax-navigation span.current,
 .page-links .current {
   cursor: not-allowed;
-  background-color: red;
+  background-color: var(--accent-color);
   color: var(--heading-color);
 }
 
@@ -2608,16 +2984,15 @@ h1.post__title {
   align-items: center;
   justify-content: center;
   margin: 0 5px;
-  color: var(--body-color);
+  color: var(--heading-color);
   border-radius: 50px;
-  border: 1px solid var(--heading-color);
+  background: var(--light-bg);
 }
 
 .sofax-navigation a:hover,
 .page-links a:hover {
-  background-color: red;
+  background-color: var(--accent-color);
   color: var(--heading-color);
-  border-color: red;
 }
 
 .sofax-hero-section {
@@ -2754,6 +3129,31 @@ h1.post__title {
   }
 }
 
+.sofax-countdown-wrap {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sofax-countdown-item {
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.08);
+  padding: 35px 55px 35px 55px;
+  text-align: center;
+  font-size: 75px;
+  line-height: 80px;
+  font-weight: 700;
+  color: var(--dark-bg);
+}
+.sofax-countdown-item p {
+  text-align: center;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 30px;
+}
+
 .sofax-team-member-wrap {
   margin-bottom: 24px;
 }
@@ -2775,6 +3175,155 @@ h1.post__title {
   }
 }
 
+.team-member-content {
+  margin-bottom: 40px;
+}
+.team-member h2 {
+  margin-bottom: 15px !important;
+}
+
+.team-member-details-wrap {
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 767px) {
+  .team-member-details-wrap {
+    flex-wrap: wrap !important;
+    width: 100%;
+  }
+}
+.team-member-details-data h4 {
+  margin-bottom: 24px;
+}
+.team-member-details-data h4:last-child {
+  margin-bottom: 0;
+}
+
+.member-social-contuct-wrap {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+}
+.member-social-contuct-data {
+  display: flex;
+  align-items: center;
+}
+
+.sofax-member-experience {
+  margin-top: 80px;
+}
+@media (max-width: 991px) {
+  .sofax-member-experience {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .sofax-member-experience {
+    margin-top: 40px;
+  }
+}
+.sofax-member-experience h3 {
+  margin-bottom: 30px;
+}
+
+.our-teaminner {
+  margin-left: 0 !important;
+}
+
+.sofax-member-skill-wrap {
+  margin-left: 60px;
+}
+@media (max-width: 991px) {
+  .sofax-member-skill-wrap {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-member-skill-wrap {
+    margin-top: 30px;
+  }
+}
+.sofax-member-bar {
+  margin-bottom: 10px;
+}
+.sofax-member-progress-line {
+  position: relative;
+  height: 10px;
+  width: 550px;
+  background: var(--light-color);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  margin-bottom: 20px;
+}
+.sofax-member-progress-line:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .sofax-member-progress-line {
+    width: 100%;
+  }
+}
+.sofax-member-progress-line h5 {
+  position: absolute;
+  background: var(--accent-color);
+  height: 100%;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.sofax-member-progress-line h5::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  right: 0;
+  top: -14px;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-style: #f0f0f0;
+}
+.sofax-member-progress-line h5::after {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  color: var(--dark-bg);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+.sofax-member-progress-line .html {
+  width: 87%;
+}
+.sofax-member-progress-line .html::after {
+  content: "87%";
+}
+.sofax-member-progress-line .css {
+  width: 90%;
+}
+.sofax-member-progress-line .css::after {
+  content: "90%";
+}
+.sofax-member-progress-line .js {
+  width: 60%;
+}
+.sofax-member-progress-line .js::after {
+  content: "60%";
+}
+.sofax-member h3 {
+  margin-bottom: 30px;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
 .sofax-iconbox-wrap {
   border-radius: 10px;
   background-color: var(--white-bg);
@@ -2816,6 +3365,9 @@ h1.post__title {
 }
 .sofax-iconbox-data2 p {
   font-size: 20px;
+}
+.sofax-iconbox-data2 p:last-child {
+  margin-bottom: 0;
 }
 
 .sofax-hero-video {
@@ -3342,6 +3894,15 @@ a.sofax-aboutus-video.aboutus-video img {
 .sofax-social-icon.dark-social ul li a:hover {
   color: var(--heading-color);
   background-color: var(--accent-color);
+}
+.sofax-social-icon.blog-social-site ul li a {
+  background: var(--dark-bg);
+  border: 1px solid var(--dark-bg);
+}
+.sofax-social-icon.blog-social-site ul li a:hover {
+  color: var(--heading-color);
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 .sofax-slider-section {
@@ -3994,6 +4555,17 @@ a.sofax-aboutus-video.aboutus-video img {
   }
 }
 
+.sofax-inner-service-shape {
+  position: absolute;
+  top: 1%;
+  right: 9%;
+}
+@media (max-width: 1399px) {
+  .sofax-inner-service-shape {
+    display: none;
+  }
+}
+
 .sofax-portfolio-author-wrap {
   display: flex;
   justify-content: space-between;
@@ -4014,6 +4586,27 @@ a.sofax-aboutus-video.aboutus-video img {
   .sofax-portfolio-author-icon img {
     width: 70%;
   }
+}
+
+.sofax-portfolio-menu ul li {
+  display: inline-block;
+  border: 1px solid var(--dark-bg);
+  border-radius: 50px;
+  padding: 18px 40px;
+  cursor: pointer;
+  margin-left: 24px;
+  font-size: 16px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: var(--dark-bg);
+}
+.sofax-portfolio-menu ul li.active {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.sofax-portfolio-wrap {
+  margin: 0 24px 24px 24px;
 }
 
 .sofax-logo-section {
@@ -4366,7 +4959,7 @@ a.sofax-connect-login img {
 }
 .hero5-thumb img {
   box-shadow: 8px 8px 0px 0px var(--dark-bg);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 @media (max-width: 991px) {
@@ -4376,7 +4969,7 @@ a.sofax-connect-login img {
 }
 .about-thumbv5 img {
   box-shadow: 8px 8px 0 0 var(--dark-bg);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 @media (max-width: 991px) {
   .about-thumbv5 img {
@@ -4408,7 +5001,167 @@ a.sofax-connect-login img {
 }
 .sofax-aboutus-thumb img {
   box-shadow: 8px 8px 0 0 var(--dark-bg);
+  border-radius: 8px;
+}
+
+.sofax-inner-service-thumb {
+  margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .sofax-inner-service-thumb {
+    margin-bottom: 30px;
+  }
+}
+.sofax-inner-service-thumb img {
+  box-shadow: 8px 8px 0 0 var(--dark-bg);
   border-radius: 10px;
+}
+@media (max-width: 991px) {
+  .sofax-inner-service-thumb img {
+    width: 100%;
+  }
+}
+
+.sofax-service-content-thumb {
+  box-shadow: 8px 8px 0 0 var(--dark-bg);
+  border-radius: 8px;
+  margin-bottom: 80px;
+}
+@media (max-width: 991px) {
+  .sofax-service-content-thumb {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-service-content-thumb {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sofax-inner-content-thumb {
+    margin-top: 40px;
+  }
+}
+.sofax-inner-content-thumb img {
+  box-shadow: 8px 8px 0 0 var(--dark-bg);
+  border-radius: 8px;
+}
+@media (max-width: 991px) {
+  .sofax-inner-content-thumb img {
+    width: 100%;
+  }
+}
+
+.sofax-career-thumb {
+  padding-bottom: 100px;
+  border-bottom: 1px solid var(--light-color);
+  margin-bottom: 100px;
+}
+@media (max-width: 991px) {
+  .sofax-career-thumb {
+    padding-bottom: 70px;
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-career-thumb {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+.sofax-career-content-wrapper {
+  border: 1px solid var(--light-color);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  transition: 0.6s;
+}
+.sofax-career-content-wrapper:hover {
+  background: var(--dark-bg);
+  border: 1px solid var(--light-color2) !important;
+}
+.sofax-career-content-wrapper:hover p, .sofax-career-content-wrapper:hover h4, .sofax-career-content-wrapper:hover h6 {
+  color: var(--white-color);
+}
+.sofax-career-content-text {
+  margin-bottom: 24px;
+}
+.sofax-career-content-text p {
+  font-size: 20px !important;
+}
+.sofax-career-content-text2 h6 {
+  font-size: 18px !important;
+  line-height: 28px;
+  font-weight: 600;
+}
+.sofax-career-content-autohre-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--light-color2);
+  margin-bottom: 24px;
+}
+.sofax-career-content-icon {
+  display: flex;
+  align-items: center;
+}
+.sofax-career-content-icon svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-bg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  padding: 10px;
+  transition: all 0.4s;
+}
+.sofax-career-content-icon svg:hover {
+  background: var(--accent-color);
+}
+.sofax-career-content-icon-text-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sofax-career-content-icon-text-wrapper2 {
+  display: flex;
+  gap: 24px;
+}
+
+.sofax-career-details1 {
+  margin-bottom: 40px;
+}
+
+.career-details {
+  margin-bottom: 24px;
+}
+.career-details h2 {
+  margin-bottom: 15px !important;
+}
+
+.sofax-career-details-content {
+  margin-bottom: 40px;
+}
+.sofax-career-details-content:last-child {
+  margin-bottom: 0;
+}
+.sofax-career-details-content h3 {
+  margin-bottom: 15px;
+}
+.sofax-career-details-content p {
+  margin-bottom: 24px;
+}
+.sofax-career-details-content p:last-child {
+  margin-bottom: 0;
+}
+.sofax-career-details-data ul li {
+  margin-bottom: 15px;
+}
+.sofax-career-details-data ul li:last-child {
+  margin-bottom: 0;
 }
 
 .sofax-accordion-item {
@@ -4536,6 +5289,7 @@ a.sofax-connect-login img {
 
 .features-v5 {
   border: 1px solid var(--dark-bg) !important;
+  padding: 22px;
 }
 .features-v5:hover {
   box-shadow: 5px 5px 0 0 #0e0e0e;
@@ -4689,6 +5443,55 @@ a.sofax-connect-login img {
   }
 }
 
+.terms-condition p {
+  font-size: 20px !important;
+}
+.terms-condition .condition {
+  color: var(--dark-bg);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.mb130 {
+  padding-bottom: 130px;
+  border-bottom: 1px solid var(--light-color);
+}
+@media (max-width: 1199px) {
+  .mb130 {
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 991px) {
+  .mb130 {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .mb130 {
+    padding-bottom: 60px;
+  }
+}
+
+.sofax-error-content {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.sofax-error-content img {
+  margin-bottom: 80px;
+}
+@media (max-width: 991px) {
+  .sofax-error-content img {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .sofax-error-content img {
+    margin-bottom: 40px;
+  }
+}
+
 /*1.3 pages css*/
 .sofax-integration-slider-icon-data-wrap.slick-initialized.slick-slider {
   direction: rtl;
@@ -4835,6 +5638,51 @@ a.sofax-connect-login img {
     width: 60px !important;
     height: 60px !important;
   }
+}
+
+.sofax-service-slider {
+  background: var(--dark-bg);
+  padding: 50px 0;
+}
+.sofax-service-slider-wrap {
+  display: flex !important;
+  gap: 30px;
+  margin-right: 24px;
+}
+.sofax-service-slider-icon {
+  display: flex;
+  align-items: center;
+}
+
+.inner-service1 p {
+  font-size: 18px;
+}
+.inner-service2 {
+  padding: 25px;
+}
+.inner-service2 h3 {
+  margin-bottom: 10px;
+}
+.inner-service2 p {
+  color: var(--light-color) !important;
+}
+
+.sofax-inner-service-details h2 {
+  max-width: 850px;
+}
+.sofax-inner-service-details p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.sofax-inner-service-content-data {
+  margin-bottom: 24px;
+}
+.sofax-inner-service-content-data:last-child {
+  margin-bottom: 0;
+}
+.sofax-inner-service-content-data h4 {
+  margin-bottom: 15px;
 }
 
 .sofax-pricing-title {
@@ -4991,6 +5839,292 @@ a.sofax-connect-login img {
   }
 }
 
+.sofax-inner-blog-wrap {
+  border: 1px solid var(--dark-bg);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.sofax-inner-blog-img img {
+  width: 100%;
+}
+.sofax-inner-blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 0 24px 0;
+}
+.sofax-inner-blog-meta h5 {
+  background: var(--dark-bg);
+  color: var(--white-color);
+  padding: 12px 15px;
+  border-radius: 5px;
+}
+@media (max-width: 991px) {
+  .sofax-inner-blog-meta img {
+    width: 100%;
+  }
+}
+.sofax-inner-blog-text h3 {
+  margin-bottom: 15px;
+}
+.sofax-inner-blog-text p {
+  font-size: 19px !important;
+  margin-bottom: 24px;
+}
+
+.sofax-inner-blog-details-img {
+  margin-bottom: 40px;
+}
+.sofax-inner-blog-details-img img {
+  width: 100%;
+}
+.sofax-inner-blog-details-content {
+  margin-bottom: 30px;
+}
+.sofax-inner-blog-details-content h3 {
+  margin-bottom: 15px;
+}
+.sofax-inner-blog-details-content-data {
+  margin-bottom: 24px;
+}
+.sofax-inner-blog-details-content-data:last-child {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--light-color);
+  margin-bottom: 40px;
+}
+.sofax-inner-blog-details-content-data h4 {
+  margin-bottom: 10px;
+}
+.sofax-inner-blog-details-content-data p {
+  font-size: 20px;
+}
+.sofax-inner-blog-details-content2 {
+  background: var(--dark-bg);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.sofax-blog-tag-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--light-color);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.sofax-blog-tag-wrap h4 {
+  margin-bottom: 24px;
+}
+.sofax-blog-tag-wrap ul li {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.sofax-post-navigation-wrap {
+  display: flex;
+  gap: 24px;
+  max-width: 300px;
+}
+.sofax-post-navigation-wrap .title-post-content ul li {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.sofax-post-navigation-wrap .title-post-content a.h6 {
+  font-size: 14px;
+}
+
+@media (max-width: 991px) {
+  .nav-preview-wrap {
+    margin-bottom: 24px;
+  }
+  .nav-preview-wrap:last-child {
+    margin-bottom: 0;
+  }
+}
+.nav-preview-icon {
+  margin-bottom: 24px;
+}
+.nav-preview-icon a {
+  color: var(--dark-bg);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sofax-post-navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--light-color);
+  margin-bottom: 40px;
+}
+
+.sofax-post-comment h3 {
+  margin-bottom: 30px;
+}
+.sofax-post-comment ul li {
+  margin-bottom: 30px;
+}
+.sofax-post-comment ul li.children {
+  padding-left: 80px;
+}
+.sofax-post-comment ul li .children2 {
+  border-top: 1px solid var(--light-color);
+  padding-top: 30px;
+  border-bottom: 1px solid var(--light-color);
+  padding-bottom: 30px;
+}
+.sofax-post-comment-wrap {
+  display: flex;
+  gap: 20px;
+}
+.sofax-post-comment-wrap:last-child {
+  margin-bottom: 40px;
+}
+.sofax-post-comment-data strong {
+  display: block;
+  font-weight: 700;
+  font-style: 16px;
+  margin-bottom: 5px;
+  color: var(--dark-bg);
+}
+.sofax-post-comment-data span {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.sofax-post-comment-data p {
+  font-size: 18px;
+  line-height: 28px;
+}
+.sofax-post-comment-data-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sofax-post-comment-data-wrap ul li a {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--dark-bg);
+}
+
+.location-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contactus-authore-wrapper {
+  margin-top: 50px;
+}
+@media (max-width: 991px) {
+  .contactus-authore-wrapper {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.responsive-map {
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+}
+
+.responsive-map iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.sofax-field-box {
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.0784313725);
+}
+@media (max-width: 991px) {
+  .sofax-field-box {
+    padding: 30px;
+  }
+}
+.sofax-field-box h3 {
+  margin-bottom: 30px;
+}
+
+.sofax-main-field {
+  margin-bottom: 24px;
+}
+.sofax-main-field label {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.sofax-form-box input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.sofax-form-box label {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--dark-bg);
+}
+.sofax-form-box label::before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--body-color);
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 12px;
+  margin-top: -2px;
+}
+
+.sofax-form-box input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--dark-bg);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+button#sofax-submit-btn {
+  border-radius: 50px;
+}
+button#sofax-submit-btn:hover {
+  color: var(--white-color) !important;
+  background-color: var(--dark-bg);
+}
+
 .sofax-loading-dots {
   text-align: center;
   width: 100%;
@@ -5107,5 +6241,210 @@ a.sofax-connect-login img {
     transform: translate(24px, 0);
   }
 }
+.portfolio-details-content h2 {
+  margin-bottom: 40px;
+}
+.portfolio-details-thumb {
+  margin-bottom: 40px;
+}
+.portfolio-details-content2 {
+  margin-right: 30%;
+}
+.portfolio-details-content2 p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.portfolio-details-content2 a img {
+  margin-left: 10px;
+}
+.portfolio-details-content3 h3 {
+  margin-bottom: 15px;
+}
+.portfolio-details-content3 p {
+  margin-bottom: 30px;
+}
+.portfolio-details-content-bottom {
+  margin-top: 40px;
+}
+.portfolio-details-content-bottom h3 {
+  margin-bottom: 15px;
+}
+.portfolio-details-content-bottom p {
+  font-size: 20px;
+}
+
+.sofax-portfolio-authore-wrap {
+  max-width: 750px;
+}
+@media (max-width: 991px) {
+  .sofax-portfolio-authore-wrap {
+    max-width: 100%;
+  }
+}
+.sofax-portfolio-authore-text {
+  margin-bottom: 24px;
+}
+.sofax-portfolio-authore-text:last-child {
+  margin-bottom: 0;
+}
+
+.sofax-portfolio-authore {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--light-color);
+  margin-bottom: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: auto;
+  display: block;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 15px;
+  background: #d6d6d6;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #aaa;
+}
+
+/* ---- button ---- */
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-bottom: 10px;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background: #f3f3f3;
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #aa96ca;
+}
+
+.button.is-checked {
+  color: white;
+}
+
+/* ---- button-group ---- */
+.button-group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+  font-family: arial;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* ---- isotope ---- */
+.grid {
+  border: 0;
+}
+
+/* clear fix */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- .element-item ---- */
+.element-item {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  padding: 0;
+  background: #888;
+  color: #262524;
+  overflow: hidden;
+}
+
+.element-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.element-item > * {
+  margin: 0;
+  padding: 0;
+}
+
+.element-item .name {
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.element-item .city {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+}
+
+.element-item .date {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+}
+
+.element-item.city1 {
+  background: #F00;
+  background: hsl(0, 100%, 50%);
+}
+
+.element-item.city2 {
+  background: #F80;
+  background: hsl(36, 100%, 50%);
+}
+
+.element-item.city3 {
+  background: #FF0;
+  background: hsl(72, 100%, 50%);
+}
+
 /*1.4 themes css*/
 /*# sourceMappingURL=app.css.map */
