@@ -381,6 +381,7 @@
     /*--------------------------------------------------------------
     TEKUP PORTFOLIO MASONAY FILTER JS
     ------------------------------------------------------------*/
+
     var sofax_filter_gallery = $('#sofax-portfolio-grid');
     if (sofax_filter_gallery.is_exist()) {
       var $container = $(sofax_filter_gallery),
