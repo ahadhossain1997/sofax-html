@@ -47,10 +47,6 @@
     });
 
     /*--------------------------------------------------------------
-    SOFAX BUTTON JS INIT
-    --------------------------------------------------------------*/
-
-    /*--------------------------------------------------------------
     sofax COUNTER JS INIT
     --------------------------------------------------------------*/
     var sofax_counter = $('#sofax-counter');
@@ -81,96 +77,127 @@
         }
       });
     }
-    $('.sofax-brand-slider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 8000,
-      arrows: false,
-      pauseOnHover: false,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 3
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      }]
-    });
-    $('.sofax-testimonial-slider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 8000,
-      arrows: false,
-      pauseOnHover: false,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1349,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1
-        }
-      }]
-    });
-    $('.sofax-testimonial-slider-2').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 8000,
-      arrows: false,
-      pauseOnHover: false,
-      rtl: true,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1349,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1
-        }
-      }]
-    });
-    $('.sofax-slider-logo-wrap').slick({
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 4000,
-      arrows: false,
-      pauseOnHover: false,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 5
-        }
-      }, {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      }]
-    });
+
+    /*--------------------------------------------------------------
+    sofax BRAND SLIDER JS INIT
+    --------------------------------------------------------------*/
+
+    var brand_slider = $('.sofax-brand-slider');
+    if (brand_slider.is_exist()) {
+      brand_slider.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        responsive: [{
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+    }
+
+    /*--------------------------------------------------------------
+    sofax BRAND SLIDER JS INIT
+    --------------------------------------------------------------*/
+    var t_slider = $('.sofax-testimonial-slider');
+    if (t_slider.is_exist()) {
+      t_slider.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        responsive: [{
+          breakpoint: 1349,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1
+          }
+        }]
+      });
+    }
+
+    /*--------------------------------------------------------------
+    sofax BRAND SLIDER JS INIT
+    --------------------------------------------------------------*/
+
+    var t_slider2 = $('.sofax-testimonial-slider-2');
+    if (t_slider2.is_exist()) {
+      t_slider2.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        arrows: false,
+        pauseOnHover: false,
+        rtl: true,
+        cssEase: 'linear',
+        responsive: [{
+          breakpoint: 1349,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1
+          }
+        }]
+      });
+    }
+
+    /*--------------------------------------------------------------
+    sofax BRAND SLIDER JS INIT
+    --------------------------------------------------------------*/
+
+    var slider_logo = $('.sofax-slider-logo-wrap');
+    if (slider_logo.is_exist()) {
+      slider_logo.slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 4000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        responsive: [{
+          breakpoint: 1399,
+          settings: {
+            slidesToShow: 5
+          }
+        }, {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+    }
 
     // sofax integration images slider 
 
@@ -243,7 +270,7 @@
     $('.sofax-slider-service-section').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 0,
       speed: 8000,
       arrows: false,
@@ -347,32 +374,6 @@
     });
 
     // pricing switch
-
-    var e = document.getElementById("filt-monthly"),
-      d = document.getElementById("filt-hourly"),
-      t = document.getElementById("switcher"),
-      m = document.getElementById("monthly"),
-      y = document.getElementById("yearly");
-    e.addEventListener("click", function () {
-      t.checked = false;
-      e.classList.add("toggler--is-activee");
-      d.classList.remove("toggler--is-activee");
-      m.classList.remove("hide");
-      y.classList.add("hide");
-    });
-    d.addEventListener("click", function () {
-      t.checked = true;
-      d.classList.add("toggler--is-activee");
-      e.classList.remove("toggler--is-activee");
-      m.classList.add("hide");
-      y.classList.remove("hide");
-    });
-    t.addEventListener("click", function () {
-      d.classList.toggle("toggler--is-activee");
-      e.classList.toggle("toggler--is-activee");
-      m.classList.toggle("hide");
-      y.classList.toggle("hide");
-    });
   }); /*End document ready*/
 
   $(window).on("resize", function () {}); // end window resize
@@ -452,64 +453,10 @@
       });
     }
   }); // End window LODE
-  (function ($) {
-    "use strict";
 
-    /*------------------------------------------------------------------
-    [Table of contents]
-    
-    
-    -------------------------------------------------------------------*/
+  $(window).on("resize", function () {}); // end window resize
 
-    /*--------------------------------------------------------------
-    CUSTOM PRE DEFINE FUNCTION
-    ------------------------------------------------------------*/
-    /* is_exist() */
-    jQuery.fn.is_exist = function () {
-      return this.length;
-    };
-    $(function () {
-      /*--------------------------------------------------------------
-      STICKY MENU JS INIT
-      --------------------------------------------------------------*/
-
-      var progressPath = document.querySelector('.progress-wrap path');
-      var pathLength = progressPath.getTotalLength();
-      progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-      progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-      progressPath.style.strokeDashoffset = pathLength;
-      progressPath.getBoundingClientRect();
-      progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-      var updateProgress = function updateProgress() {
-        var scroll = $(window).scrollTop();
-        var height = $(document).height() - $(window).height();
-        var progress = pathLength - scroll * pathLength / height;
-        progressPath.style.strokeDashoffset = progress;
-      };
-      updateProgress();
-      $(window).scroll(updateProgress);
-      var offset = 50;
-      var duration = 550;
-      jQuery(window).on('scroll', function () {
-        if (jQuery(this).scrollTop() > offset) {
-          jQuery('.progress-wrap').addClass('active-progress');
-        } else {
-          jQuery('.progress-wrap').removeClass('active-progress');
-        }
-      });
-      jQuery('.progress-wrap').on('click', function (event) {
-        event.preventDefault();
-        jQuery('html, body').animate({
-          scrollTop: 0
-        }, duration);
-        return false;
-      });
-    }); /*End document ready*/
-
-    $(window).on("resize", function () {}); // end window resize
-
-    $(window).on("load", function () {}); // End window LODE
-  })(jQuery);
+  $(window).on("load", function () {}); // End window LODE
 
   /*--------------------------------------------------------------
   sofax MAP JS
