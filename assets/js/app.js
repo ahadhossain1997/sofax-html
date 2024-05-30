@@ -5,20 +5,21 @@
 
   /*------------------------------------------------------------------
   [Table of contents]
-  sofax PRELOADER JS INIT
-  sofax SKILLBAR JS INIT
-  sofax MENU SIDEBAR JS INIT
-  sofax COUNTER JS INIT
-  sofax IMAGE ROTATE JS INIT
-  sofax AUTO SLIDER JS INIT
-  sofax PROJECT SLIDER JS INIT
-  sofax PROJECT SLIDER2 JS INIT
-  sofax MAGNIFIC POPUP JS INIT
-  sofax IMAGE SWIPE HOVER JS INIT
-  sofax PRICING TABLE JS INIT
-  sofax MAP JS
-  sofax wow js
-  
+  SOFAX PRELOADER JS INIT
+  SOFAX STICKY MENU JS INIT
+  SOFAX COUNTER JS INIT
+  SOFAX BRAND SLIDER JS INIT
+  SOFAX BRAND SLIDER JS INIT
+  SOFAX BRAND SLIDER JS INIT
+  SOFAX BRAND SLIDER JS INIT
+  SOFAX INTEGRATION JS INIT
+  SOFAX SERVICE CONTENT SLIDER SECTION JS INIT
+  SOFAX MAGNIFIC POPUP JS INIT
+  SOFAX TESTIMONIAL SLIDER JS INIT
+  SOFAX PORTFOLIO MASONAY FILTER JS
+  SOFAX MAP JS INIT
+  SOFAX SPLITING JS INIT
+  SOFAX PRICING TABLE JS INIT
   -------------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
@@ -30,7 +31,7 @@
   };
   $(function () {
     /*--------------------------------------------------------------
-    sofax PRELOADER JS INIT
+    SOFAX PRELOADER JS INIT
     --------------------------------------------------------------*/
 
     $(".sofax-preloader-wrap").fadeOut(500);
@@ -79,7 +80,7 @@
     }
 
     /*--------------------------------------------------------------
-    sofax BRAND SLIDER JS INIT
+    SOFAX BRAND SLIDER JS INIT
     --------------------------------------------------------------*/
 
     var brand_slider = $('.sofax-brand-slider');
@@ -172,7 +173,7 @@
     var slider_logo = $('.sofax-slider-logo-wrap');
     if (slider_logo.is_exist()) {
       slider_logo.slick({
-        slidesToShow: 6,
+        slidesToShow: 7,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
@@ -198,102 +199,112 @@
         }]
       });
     }
+    /*--------------------------------------------------------------
+    sofax integration images slider
+    --------------------------------------------------------------*/
+    var integration_slider_icon_data = $('.sofax-integration-slider-icon-data');
+    if (integration_slider_icon_data.is_exist()) {
+      integration_slider_icon_data.slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 5000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        responsive: [{
+          breakpoint: 1399,
+          settings: {
+            slidesToShow: 5
+          }
+        }, {
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+    }
+    var integration_slider_icon_data_wrap = $('.sofax-integration-slider-icon-data-wrap');
+    if (integration_slider_icon_data_wrap.is_exist()) {
+      integration_slider_icon_data_wrap.slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 5000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        rtl: true,
+        responsive: [{
+          breakpoint: 1399,
+          settings: {
+            slidesToShow: 5
+          }
+        }, {
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+    }
 
-    // sofax integration images slider 
-
-    $('.sofax-integration-slider-icon-data').slick({
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 5000,
-      arrows: false,
-      pauseOnHover: false,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 5
-        }
-      }, {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 4
-        }
-      }, {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      }]
-    });
-    $('.sofax-integration-slider-icon-data-wrap').slick({
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 5000,
-      arrows: false,
-      pauseOnHover: false,
-      cssEase: 'linear',
-      rtl: true,
-      responsive: [{
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 5
-        }
-      }, {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 4
-        }
-      }, {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      }]
-    });
-
-    // service content slider sectoin
-
-    $('.sofax-slider-service-section').slick({
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 0,
-      speed: 8000,
-      arrows: false,
-      pauseOnHover: false,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 1
-        }
-      }]
-    });
+    //sofax service content slider sectoin
+    var slider_service_section = $('.sofax-slider-service-section');
+    if (slider_service_section.is_exist()) {
+      slider_service_section.slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        responsive: [{
+          breakpoint: 1399,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+    }
 
     //  v5
-    $('.sofax-testimonial-2column-sliderv5').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      arrows: true,
-      prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
-      nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
-    });
-
+    var testimonial_2column_sliderv5 = $('.sofax-testimonial-2column-sliderv5');
+    if (testimonial_2column_sliderv5.is_exist()) {
+      testimonial_2column_sliderv5.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        arrows: true,
+        prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
+        nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
+      });
+    }
     /*--------------------------------------------------------------
     sofax MAGNIFIC POPUP JS INIT
     ------------------------------------------------------------*/
@@ -304,20 +315,7 @@
         mainClass: 'mfp-fade'
       });
     }
-    var popup_youtube = $('.play-video');
-    if (popup_youtube.is_exist()) {
-      popup_youtube.magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade'
-      });
-    }
-    var popup_youtube = $('.aboutus-video');
-    if (popup_youtube.is_exist()) {
-      popup_youtube.magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade'
-      });
-    }
+
     // testimonial slider
 
     $('.sofax-testimonial-2column-slider').slick({
@@ -372,8 +370,6 @@
       var goToSingleSlide = $(this).data('slick-index');
       $('.sofax-testimonial-2column-slider').slick('slickGoTo', goToSingleSlide);
     });
-
-    // pricing switch
   }); /*End document ready*/
 
   $(window).on("resize", function () {}); // end window resize
@@ -603,6 +599,8 @@
       input.attr("type", "password");
     }
   });
+
+  // SOFAX SPLITING JS INIT
   Splitting();
   gsap.from(".char", {
     duration: 0.5,
