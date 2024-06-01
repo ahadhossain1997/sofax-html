@@ -6652,6 +6652,15 @@ a.sofax-connect-login img {
   }
 }
 
+.mt-30 {
+  margin-top: 30px;
+}
+@media (max-width: 767px) {
+  .mt-30 {
+    margin-top: 20px;
+  }
+}
+
 .location-icon {
   position: absolute;
   top: 50%;
@@ -6795,6 +6804,10 @@ button#sofax-submit-btn:hover {
 
 .reset-pswrd {
   margin: 24px 0 0 0 !important;
+}
+
+.sofax-post-comment-thumb img {
+  width: 100%;
 }
 
 .sofax-loading-dots {
