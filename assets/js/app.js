@@ -1,5 +1,9 @@
 "use strict";
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 (function ($) {
   "use strict";
 
@@ -9,15 +13,17 @@
   SOFAX STICKY MENU JS INIT
   SOFAX COUNTER JS INIT
   SOFAX BRAND SLIDER JS INIT
-  SOFAX BRAND SLIDER JS INIT
-  SOFAX BRAND SLIDER JS INIT
-  SOFAX BRAND SLIDER JS INIT
+  SOFAX TESTIMONIAL SLIDER JS INIT
+  SOFAX TESTIMONIAL SLIDER 2 JS INIT
+  SOFAX SLIDER LOGO WRAP JS INIT
   SOFAX INTEGRATION JS INIT
   SOFAX SERVICE CONTENT SLIDER SECTION JS INIT
+  SOFAX TESTIMONIAL 2 COLUMN SLIDER JS INIT
   SOFAX MAGNIFIC POPUP JS INIT
   SOFAX TESTIMONIAL SLIDER JS INIT
   SOFAX PORTFOLIO MASONAY FILTER JS
   SOFAX MAP JS INIT
+  SOFAX TOGGOLE PASSWOR JS INIT
   SOFAX SPLITING JS INIT
   SOFAX PRICING TABLE JS INIT
   -------------------------------------------------------------------*/
@@ -78,11 +84,9 @@
         }
       });
     }
-
     /*--------------------------------------------------------------
     SOFAX BRAND SLIDER JS INIT
     --------------------------------------------------------------*/
-
     var brand_slider = $('.sofax-brand-slider');
     if (brand_slider.is_exist()) {
       brand_slider.slick({
@@ -109,7 +113,7 @@
     }
 
     /*--------------------------------------------------------------
-    sofax BRAND SLIDER JS INIT
+    SOFAX TESTIMONIAL SLIDER JS INIT
     --------------------------------------------------------------*/
     var t_slider = $('.sofax-testimonial-slider');
     if (t_slider.is_exist()) {
@@ -137,7 +141,7 @@
     }
 
     /*--------------------------------------------------------------
-    sofax BRAND SLIDER JS INIT
+    SOFAX TESTIMONIAL SLIDER 2 JS INIT
     --------------------------------------------------------------*/
 
     var t_slider2 = $('.sofax-testimonial-slider-2');
@@ -165,9 +169,8 @@
         }]
       });
     }
-
     /*--------------------------------------------------------------
-    sofax BRAND SLIDER JS INIT
+    SOFAX SLIDER LOGO WRAP JS INIT
     --------------------------------------------------------------*/
 
     var slider_logo = $('.sofax-slider-logo-wrap');
@@ -194,13 +197,23 @@
         }, {
           breakpoint: 767,
           settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 700,
+          settings: {
             slidesToShow: 2
+          }
+        }, {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 1
           }
         }]
       });
     }
     /*--------------------------------------------------------------
-    sofax integration images slider
+    SOFAX INTEGRATION IMAGES SLIDER JS INIT
     --------------------------------------------------------------*/
     var integration_slider_icon_data = $('.sofax-integration-slider-icon-data');
     if (integration_slider_icon_data.is_exist()) {
@@ -272,28 +285,22 @@
       });
     }
 
-    //sofax service content slider sectoin
+    // SOFAX SERVICE SLIDER SECTION JS INIT
     var slider_service_section = $('.sofax-slider-service-section');
     if (slider_service_section.is_exist()) {
       slider_service_section.slick({
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
         speed: 8000,
         arrows: false,
         pauseOnHover: false,
-        cssEase: 'linear',
-        responsive: [{
-          breakpoint: 1399,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
+        cssEase: 'linear'
       });
     }
 
-    //  v5
+    //  sofax-testimonial-2column-sliderv5
     var testimonial_2column_sliderv5 = $('.sofax-testimonial-2column-sliderv5');
     if (testimonial_2column_sliderv5.is_exist()) {
       testimonial_2column_sliderv5.slick({
@@ -301,6 +308,7 @@
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
+        infinite: true,
         prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
         nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
       });
@@ -318,7 +326,7 @@
 
     // testimonial slider
 
-    $('.sofax-testimonial-2column-slider').slick({
+    $('.sofax-testimonial-2column-slider').slick(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
@@ -326,11 +334,8 @@
       adaptiveHeight: true,
       infinite: false,
       useTransform: true,
-      speed: 400,
-      cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
-      prevArrow: '<button class="slide-arrow sofax-t-next"></button>',
-      nextArrow: '<button class="slide-arrow sofax-t-prev"></button>'
-    });
+      speed: 400
+    }, "infinite", true), "cssEase", 'cubic-bezier(0.77, 0, 0.18, 1)'), "prevArrow", '<button class="slide-arrow sofax-t-next"></button>'), "nextArrow", '<button class="slide-arrow sofax-t-prev"></button>'));
     $('.sofax-testimonial-slider-nav').on('init', function (event, slick) {
       $('.sofax-testimonial-slider-nav .slick-slide.slick-current').addClass('is-active');
     }).slick({
@@ -376,7 +381,7 @@
 
   $(window).on("load", function () {
     /*--------------------------------------------------------------
-    TEKUP PORTFOLIO MASONAY FILTER JS
+    SOFAX PORTFOLIO MASONAY FILTER JS
     ------------------------------------------------------------*/
 
     var sofax_filter_gallery = $('#sofax-portfolio-grid');
@@ -588,7 +593,7 @@
 
   // external js: isotope.pkgd.js
 
-  // form show/hide
+  // SOFAX TOGGOLE PASSWOR JS INIT
 
   $(".toggle-password").click(function () {
     $(this).toggleClass("fa-eye fa-eye-slash");

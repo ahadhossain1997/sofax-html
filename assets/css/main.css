@@ -685,6 +685,10 @@ bodt {
     width: 24px;
     position: relative;
   }
+  .site-header .mobile-menu-trigger.light span {
+    background-color: #fff;
+
+  }
 
   .reveal-header .mobile-menu-trigger span {
     background-color: #13111A !important;
@@ -704,6 +708,13 @@ bodt {
   .reveal-header .mobile-menu-trigger span:after {
     background-color: #13111A !important;
   }
+
+   .mobile-menu-trigger.light span:before,
+   .mobile-menu-trigger.light span:after {
+    background-color: #fff !important;
+  }
+
+  .mobile-menu-trigger.light{}
 
   .dark-mode-texts .mobile-menu-trigger span {
     background-color: #13111A;
