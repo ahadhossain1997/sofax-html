@@ -6770,7 +6770,6 @@ a.sofax-connect-login img {
   font-size: 16px;
   line-height: 24px;
   color: var(--dark-bg);
-  margin-bottom: 18px;
 }
 @media (max-width: 767px) {
   .sofax-form-box label {
