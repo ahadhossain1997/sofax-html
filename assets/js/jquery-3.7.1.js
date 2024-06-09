@@ -5816,7 +5816,7 @@ function restoreScript( elem ) {
 }
 
 function cloneCopyEvent( src, dest ) {
-	var i, l, type, pdataOld, udataOld, udataCur, events;
+	var i, l, type, pdataOld, udataOld, udatacur, events;
 
 	if ( dest.nodeType !== 1 ) {
 		return;
@@ -5841,9 +5841,9 @@ function cloneCopyEvent( src, dest ) {
 	// 2. Copy user data
 	if ( dataUser.hasData( src ) ) {
 		udataOld = dataUser.access( src );
-		udataCur = jQuery.extend( {}, udataOld );
+		udatacur = jQuery.extend( {}, udataOld );
 
-		dataUser.set( dest, udataCur );
+		dataUser.set( dest, udatacur );
 	}
 }
 
