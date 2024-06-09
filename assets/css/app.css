@@ -2805,6 +2805,11 @@ button#sofax-subscription-btn:hover {
 .blog-details-subscribe-btn input {
   padding: 15px 40% 15px 20px !important;
 }
+@media (max-width: 767px) {
+  .blog-details-subscribe-btn input {
+    padding: 15px 20px 15px 20px !important;
+  }
+}
 @media (max-width: 425px) {
   .blog-details-subscribe-btn input {
     height: 55px;
@@ -4183,7 +4188,7 @@ h1.post__title {
 }
 
 @media (max-width: 1199px) {
-  .tac2 h2, .tac2 p {
+  .tac4 h2, .tac4 p {
     text-align: center;
   }
 }
@@ -6159,8 +6164,20 @@ a.sofax-connect-login img {
 }
 
 @media (max-width: 991px) {
-  .tac h2, .tac p {
+  .tac1 h2 {
     text-align: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .tac {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .tac4 {
+    text-align: center !important;
   }
 }
 
